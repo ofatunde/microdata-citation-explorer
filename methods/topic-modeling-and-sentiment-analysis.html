@@ -395,11 +395,17 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="topic-modeling-and-sentiment-analysis">
 <h1><span class="section-number">3.5. </span>Topic Modeling and Sentiment Analysis<a class="headerlink" href="#topic-modeling-and-sentiment-analysis" title="Permalink to this headline">#</a></h1>
 <p>We make use of the NLP4Dev API.</p>
+<p>We run the abstracts from the “query_typex_abs” through the NLP4DEV API. We convert the response objects into three types of datasets: “NLP4DEV_qx”, “topic_importance_querytypex”, and “nlpdev_queryx. “NLP4DEV_qx” datasets contain the metadata from the NLP4DEV API: country counts, country group, JDC tags, the tag counts, the dataset ID, Corpus ID, and the country that is mentioned the most.  “nlpdev_queryx datasets containing the raw data dump from the NLP4DEV API. Basically, “nlpdev_queryx is the raw version of NLP4DEV_qx. These datasets can be found in the NLP4DEV datasets folder on the cloud.</p>
+<p>“topic_importance_querytypex” datasets contain the topic importance. The default number of topics returned from the NLP4DEV API is 10.</p>
+<p>We merge the semantic scholar metadata(“query_typex_abs.csv”) and the metadata (“NLP4DEV_qx” ) files we get from running the abstracts through the NLP4DEV API. The datasets labeled “ss_NLP4_queryx_merge” and “qx_ss_nlpdev_master” are the results of different types or merges from the two metadata sources. If in doubt, use the “qx_ss_nlpdev_master” datasets.</p>
+<p>“qx_datasets” contain the  datasets that returned queries from the NLP4DEV API for each query. This returns the datasets that do not have HTML tags.
+“qx_qx_sample_streamlit_demo” and qx_qx_demo_short contain the following variables: title, abstract, dataset number, and query number.
+“qx_qx_sample_results” datasets contain the information we need to display in the app. It contains the following variables: dataset title, paper title, relevance, JDC tags, value, and topic percentages.</p>
 <section id="citations">
 <h2><span class="section-number">3.5.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
+this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
 <p>Moreover, you can insert a bibliography into your page with this syntax:
 The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
 render properly.
