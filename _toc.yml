@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: true
+  only_build_toc_files: true
+chapters:
+- file: background-and-context
+- file: proposed-solution
+- file: methods
+  sections:
+    - file: methods/query-generation
+    - file: methods/semantic-search
+    - file: methods/topic-modeling-and-sentiment-analysis
+- file: implementation-options
+- file: contributors
+- file: bibliography
+- url: https://ofatunde-mdl-explorer-app-appmain-r0x5v9.streamlit.app/
+  title: Live demo
+- url: https://github.com/ofatunde/mdl-explorer-app
+  title: Code repository
+
