@@ -1,3 +1,4 @@
 # Bibliography
 
-Test text
+```{bibliography}
+```
