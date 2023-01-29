@@ -19,6 +19,7 @@ chapters:
     - file: methods/query-generation
     - file: methods/semantic-search
     - file: methods/topic-modeling-and-sentiment-analysis
+    - file: methods/network-analysis
 - file: implementation-options
 - file: contributors
 - file: bibliography
