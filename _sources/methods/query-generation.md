@@ -14,8 +14,10 @@ kernelspec:
 ---
 
 # Query Generation
-Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
+We begin by generating a set of search queries based on the 
+Here is the query creation notebook: https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb 
+
+
 This page shows off a notebook written in MyST Markdown.
 
 ## An example cell
@@ -44,13 +46,10 @@ MyST Markdown notebooks are defined by two things:
 
 That's all that is needed to get started!
 
-## Quickly add YAML metadata for MyST Notebooks
+## Next steps
+After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx") through the semantic scholar API. See [the next section](methods/semantic-search.md) for more detailes.
 
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
 
-```
-jupyter-book myst init path/to/markdownfile.md
-```
 ## Citations
 
 You can also cite references that are stored in a `bibtex` file. For example,
