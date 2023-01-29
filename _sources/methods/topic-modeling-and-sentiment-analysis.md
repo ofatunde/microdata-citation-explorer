@@ -15,8 +15,6 @@ We merge the semantic scholar metadata(**“query_typex_abs.csv”**) and the me
 
 ## Citations
 
-## Citations
-
 The following papers informed our approach: {cite}`Fast2016`,{cite}`Chen2006`.
 
 

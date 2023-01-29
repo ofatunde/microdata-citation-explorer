@@ -16,7 +16,7 @@ Various components of datasets included in microdata library
 
 The UNHCR/GDS Microdata Curation Team currently tracks usage of datasets through a semi-manual process.
 
-This process ist ime-consuming, and also likely to miss entries due to being ad hoc.
+This process is time-consuming, and also likely to miss entries due to being ad hoc.
 
 The goal of this project was to automate and extend the current procedure to increase efficiency and provide deeper insight.
 
