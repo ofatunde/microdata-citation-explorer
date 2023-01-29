@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Implementation Options &#8212; Microdata Citation Explorer project</title>
+    <title>Network analysis &#8212; Microdata Citation Explorer project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Contributors" href="contributors.html" />
-    <link rel="prev" title="3.5. Topic Modeling and Sentiment Analysis" href="methods/topic-modeling-and-sentiment-analysis.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="background-and-context.html">
    1. Context
@@ -151,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="implementation-options.html">
    4. Implementation Options
   </a>
  </li>
@@ -266,7 +264,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fimplementation-options.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnetwork-analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -294,7 +292,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/implementation-options.md"
+        <a href="_sources/network-analysis.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -331,70 +329,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inputs">
-   4.1. Inputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outputs">
-   4.2. Outputs
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Implementation Options</h1>
+                <h1>Network analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inputs">
-   4.1. Inputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#outputs">
-   4.2. Outputs
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -402,17 +353,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implementation-options">
-<h1><span class="section-number">4. </span>Implementation Options<a class="headerlink" href="#implementation-options" title="Permalink to this headline">#</a></h1>
-<p>We have created a simple tool that allows UNHCR staff (and possibly others) to view aggregate statistics for an individual dataset or group of datasets. Click the “Live Demo” link on the left side of the page to explore the demo app.</p>
-<section id="inputs">
-<h2><span class="section-number">4.1. </span>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">#</a></h2>
-<p>Users specify the dataset they are interested in exploring.</p>
-</section>
-<section id="outputs">
-<h2><span class="section-number">4.2. </span>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">#</a></h2>
-<p>Users receive a list of papers alongside information about relevance to the specified dataset.</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="network-analysis">
+<h1>Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">#</a></h1>
+<p>The final portion of our methodology allows us to obtain higher-level insights about the network of authors/papers making use of UNHCR microdata.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,20 +385,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="methods/topic-modeling-and-sentiment-analysis.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.5. </span>Topic Modeling and Sentiment Analysis</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="contributors.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Contributors</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
