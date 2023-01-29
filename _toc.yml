@@ -6,6 +6,11 @@ root: intro
 options:
   numbered: true
   only_build_toc_files: true
+#repository:
+#  url: https://github.com/ofatunde/microdata-citation-explorer
+#html:
+#  use_repository_button: true
+#  use_issues_button: true
 chapters:
 - file: background-and-context
 - file: proposed-solution
