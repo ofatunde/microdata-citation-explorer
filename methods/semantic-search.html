@@ -395,20 +395,25 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="semantic-search">
 <h1><span class="section-number">3.4. </span>Semantic search<a class="headerlink" href="#semantic-search" title="Permalink to this headline">#</a></h1>
 <p>We made use of the Semantic Scholar API.</p>
-<p>From the Semantic Scholar API, we get the datasets labeled “query_typex_abs,” where the x  in the name = 1,2,3,4,5,6 refers to the query type. These datasets contain the following variables: paper title, abstract, corpus ID (also called paper ID), author IDs, Digital Object identifiers (DOIs), publication year, the journal where the paper was published, and the dataset ID. These metadata datasets will be merged with the metadata datasets we get from the NLP4DEV API website.</p>
+<p>From the Semantic Scholar API, we get the datasets labeled <strong>“query_typex_abs,”</strong> where the x  in the name = 1,2,3,4,5,6 refers to the query type. These datasets contain the following variables: <strong>paper title, abstract, corpus ID (also called paper ID), author IDs, Digital Object identifiers (DOIs), publication year,</strong> the <strong>journal</strong>  where the paper was published, and the <strong>dataset ID</strong>. These metadata datasets will be merged with the metadata datasets we get from the NLP4DEV API website.</p>
 <section id="citations">
 <h2><span class="section-number">3.4.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
+<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id4" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="../proposed-solution%20copy.html#id3" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
+<div class="docutils container" id="id3">
 <dl class="citation">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">HdHPK14</a></span></dt>
+<dt class="label" id="id6"><span class="brackets">BK16</span></dt>
+<dd><p>Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In <em>Proceedings of the 2016 International Conference on Management of Data</em>. ACM, June 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">https://doi.org/10.1145/2882903.2915210</a>, <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">doi:10.1145/2882903.2915210</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">CK06</a></span></dt>
+<dd><p>Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In <em>Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval</em>. ACM, August 2006. URL: <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">https://doi.org/10.1145/1148170.1148245</a>, <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">doi:10.1145/1148170.1148245</a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">CKPT92</span></dt>
+<dd><p>Douglass R. Cutting, David R. Karger, Jan O. Pedersen, and John W. Tukey. Scatter/gather: a cluster-based approach to browsing large document collections. In <em>Proceedings of the 15th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR \textquotesingle 92</em>. ACM Press, 1992. URL: <a class="reference external" href="https://doi.org/10.1145/133160.133214">https://doi.org/10.1145/133160.133214</a>, <a class="reference external" href="https://doi.org/10.1145/133160.133214">doi:10.1145/133160.133214</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">FCB16</a></span></dt>
+<dd><p>Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In <em>Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</em>. ACM, May 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">https://doi.org/10.1145/2858036.2858535</a>, <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">doi:10.1145/2858036.2858535</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">HdHPK14</span></dt>
 <dd><p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
 </dd>
 </dl>
