@@ -6,11 +6,17 @@ We want to 1) better understand the impact it’s having, and 2) optimize it and
 
 The library houses over 500 datasets, many of which are individual waves of a repeated survey. Many surveys are conducted in multiple waves, which differ by year, geography, or context. Location can be at the national, regional, or camp level.
 
+```{figure} ../images/title_anatomy.png
+---
+height: 150px
+name: title-anatomy
+---
+Various components of datasets included in microdata library
+```
+
 The UNHCR/GDS Microdata Curation Team currently tracks usage of datasets through a semi-manual process.
 
-This process is:
-Time-consuming
-Ad hoc, and thus likely to miss entries.
+This process ist ime-consuming, and also likely to miss entries due to being ad hoc.
 
 The goal of this project was to automate and extend the current procedure to increase efficiency and provide deeper insight.
 

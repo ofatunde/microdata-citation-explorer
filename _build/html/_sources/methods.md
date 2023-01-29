@@ -13,6 +13,9 @@ Below we summarize the three primary methods that were used throughout this proc
 | 2 	| [Semantic search](methods/semantic-search.md) 	| One or more query strings for each dataset 	| List(s) of citing papers 	| Information about topics and countries included, field of study and nature of use 	|
 | 3 	| [Topic modeling/ sentiment analysis](methods/topic-modeling-and-sentiment-analysis.md) 	| Text of individual citing papers 	| Information about topics and countries included, field of study and nature of use 	| We can determine how the dataset is used in each matching publication without resorting to manual review/analysis 	|
 
+## Tools
+We use two external tools: APIs powered by Semantic Scholar and NLP4Dev. We load corpuses from both and store them in [Google Cloud Storage] (https://console.cloud.google.com/storage/browser/mdl-explorer-app;tab=objects?project=unhcr-microdata&prefix=&forceOnObjectsSortingFiltering=false).
+
 ## Citations
 
 You can also cite references that are stored in a `bibtex` file. For example,
