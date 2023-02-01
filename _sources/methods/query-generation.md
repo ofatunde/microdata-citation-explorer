@@ -16,7 +16,24 @@ kernelspec:
 # Query Generation
 We begin by generating a set of search queries based on the metadata for each dataset.
 
-The full query creation notebook can be found at this link: https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb 
+The full query creation notebook can be found at this link: 
+[1]: https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb "Query notebook"
+
+We start with simple methods of combining the metadata. The key metadata components that we use as an input into queries are:
+* Core survey name
+* Survey abbreviation (e.g., VaSyR)
+* Lead organization (e.g., UNHCR)
+* Category (e.g., Socioeconomic Asessment of Refugees)
+* Country
+* Year 
+
+For our initial exploration, we define six query types:
+
+* Query type 1: fau_short+year+name+shortcode
+* Query type 2: fau_short+year+name+full_name
+* Query type 3: fau_short+year+name+shortcode_fullname
+* Query type 4: fau_long+year+name+shortcode
+* Query type 6: fau_long+year+name+shortcode_fullname
 
 ### Import modules
 ```{code-cell}

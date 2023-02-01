@@ -156,19 +156,46 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../results.html">
+   4. Results
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../results/model-output.html">
+     4.3. Model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../results/evaluating-model-performance.html">
+     4.4. Evaluating model performance
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../implementation-options.html">
-   4. Implementation Options
+   5. Implementation Options
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../case-study.html">
+   6. Case Study: VaSyR 2018
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../contributors.html">
-   5. Contributors
+   7. Contributors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   6. Bibliography
+   8. Bibliography
   </a>
  </li>
  <li class="toctree-l1">
@@ -536,7 +563,25 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="query-generation">
 <h1><span class="section-number">3.3. </span>Query Generation<a class="headerlink" href="#query-generation" title="Permalink to this headline">#</a></h1>
 <p>We begin by generating a set of search queries based on the metadata for each dataset.</p>
-<p>The full query creation notebook can be found at this link: <a class="reference external" href="https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb">https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb</a></p>
+<p>The full query creation notebook can be found at this link:
+[1]: <a class="reference external" href="https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb">https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb</a> “Query notebook”</p>
+<p>We start with simple methods of combining the metadata. The key metadata components that we use as an input into queries are:</p>
+<ul class="simple">
+<li><p>Core survey name</p></li>
+<li><p>Survey abbreviation (e.g., VaSyR)</p></li>
+<li><p>Lead organization (e.g., UNHCR)</p></li>
+<li><p>Category (e.g., Socioeconomic Asessment of Refugees)</p></li>
+<li><p>Country</p></li>
+<li><p>Year</p></li>
+</ul>
+<p>For our initial exploration, we define six query types:</p>
+<ul class="simple">
+<li><p>Query type 1: fau_short+year+name+shortcode</p></li>
+<li><p>Query type 2: fau_short+year+name+full_name</p></li>
+<li><p>Query type 3: fau_short+year+name+shortcode_fullname</p></li>
+<li><p>Query type 4: fau_long+year+name+shortcode</p></li>
+<li><p>Query type 6: fau_long+year+name+shortcode_fullname</p></li>
+</ul>
 <section id="import-modules">
 <h2><span class="section-number">3.3.1. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
@@ -718,7 +763,7 @@ Query type 6: fau_long+year+name+shortcode_fullname</p>
 </section>
 <section id="citations">
 <h2><span class="section-number">3.3.10. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id5" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
+<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="#id5" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
 <dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">BK16</a></span></dt>

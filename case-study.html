@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Methods &#8212; Microdata Citation Explorer project</title>
+    <title>6. Case Study: VaSyR 2018 &#8212; Microdata Citation Explorer project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.3. Query Generation" href="methods/query-generation.html" />
-    <link rel="prev" title="2. Proposed Solution" href="proposed-solution.html" />
+    <link rel="next" title="7. Contributors" href="contributors.html" />
+    <link rel="prev" title="5. Implementation Options" href="implementation-options.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -124,11 +124,11 @@ const thebe_selector_output = ".output, .cell_output"
    2. Proposed Solution
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="methods.html">
    3. Methods
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
@@ -183,8 +183,8 @@ const thebe_selector_output = ".output, .cell_output"
    5. Implementation Options
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="case-study.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    6. Case Study: VaSyR 2018
   </a>
  </li>
@@ -298,7 +298,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmethods.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcase-study.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -326,7 +326,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/methods.md"
+        <a href="_sources/case-study.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -363,70 +363,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tools">
-   3.1. Tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   3.2. Citations
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Methods</h1>
+                <h1>Case Study: VaSyR 2018</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tools">
-   3.1. Tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   3.2. Citations
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -434,67 +387,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="methods">
-<h1><span class="section-number">3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h1>
-<p>This paper describes a methodology for systematically monitoring the use of UNHCR microdata. We develop a workflow for searching literature repositories with an initial focus on academic research, but with plans to include “grey literature” in the future. We take a three-step approach to producing a comprehensive and informative list of the papers that reference a particular dataset. First, for a given dataset, we begin by combining information from the metadata fields available for the study and using these terms to form multiple and overlapping search queries; these include the primary authoring organization, the year of the survey, and the country in which the study was carried out. Second, we use the generated query strings to generate sets of search results for each UNHCR microdata set from Semantic Scholar.
-Third, once a list of possible references has been compiled for each dataset, we compute for each reference a measure of its relevance to the dataset in question using Natural Language Processing (NLP). We first generate a list of topics contained in each reference using the topic modeling and analysis tools made available by NLP4Dev (<a class="reference external" href="https://www.nlp4dev.org/">https://www.nlp4dev.org/</a>). To classify each possible reference by relevance to a given dataset, we consider 1) the share of identified topics related to forced displacement, 2) the set of countries mentioned in the reference, and 3) the frequency of a curated set of key-word tags related to forced displacement.</p>
-<p>Below we summarize the three primary methods that were used throughout this process. Each is described in greater detail in a link on the left side of the page.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="text-align:center head"><p><strong>Step</strong></p></th>
-<th class="text-align:center head"><p><strong>Input</strong></p></th>
-<th class="text-align:center head"><p><strong>Output</strong></p></th>
-<th class="text-align:center head"><p><strong>Benefit</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td class="text-align:center"><p><a class="reference internal" href="methods/query-generation.html"><span class="doc std std-doc">Query generation</span></a></p></td>
-<td class="text-align:center"><p>Metadata for an individual dataset</p></td>
-<td class="text-align:center"><p>List of query strings</p></td>
-<td class="text-align:center"><p>Information about topics and countries included, field of study and nature of use</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td class="text-align:center"><p><a class="reference internal" href="methods/semantic-search.html"><span class="doc std std-doc">Semantic search</span></a></p></td>
-<td class="text-align:center"><p>One or more query strings for each dataset</p></td>
-<td class="text-align:center"><p>List(s) of citing papers</p></td>
-<td class="text-align:center"><p>Information about topics and countries included, field of study and nature of use</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td class="text-align:center"><p><a class="reference internal" href="methods/topic-modeling-and-sentiment-analysis.html"><span class="doc std std-doc">Topic modeling/ sentiment analysis</span></a></p></td>
-<td class="text-align:center"><p>Text of individual citing papers</p></td>
-<td class="text-align:center"><p>Information about topics and countries included, field of study and nature of use</p></td>
-<td class="text-align:center"><p>We can determine how the dataset is used in each matching publication without resorting to manual review/analysis</p></td>
-</tr>
-</tbody>
-</table>
-<section id="tools">
-<h2><span class="section-number">3.1. </span>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">#</a></h2>
-<p>We use two external tools: APIs powered by Semantic Scholar and NLP4Dev. We load corpuses from both and store them in [Google Cloud Storage] (<a class="reference external" href="https://console.cloud.google.com/storage/browser/mdl-explorer-app;tab=objects?project=unhcr-microdata&amp;prefix=&amp;forceOnObjectsSortingFiltering=false">https://console.cloud.google.com/storage/browser/mdl-explorer-app;tab=objects?project=unhcr-microdata&amp;prefix=&amp;forceOnObjectsSortingFiltering=false</a>).</p>
-</section>
-<section id="citations">
-<h2><span class="section-number">3.2. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="methods/query-generation.html#id6" title="Douglass R. Cutting, David R. Karger, Jan O. Pedersen, and John W. Tukey. Scatter/gather: a cluster-based approach to browsing large document collections. In Proceedings of the 15th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR \textquotesingle 92. ACM Press, 1992. URL: https://doi.org/10.1145/133160.133214, doi:10.1145/133160.133214.">CKPT92</a>]</span>.</p>
-<div class="docutils container" id="id2">
-<dl class="citation">
-<dt class="label" id="id5"><span class="brackets">BK16</span></dt>
-<dd><p>Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In <em>Proceedings of the 2016 International Conference on Management of Data</em>. ACM, June 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">https://doi.org/10.1145/2882903.2915210</a>, <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">doi:10.1145/2882903.2915210</a>.</p>
-</dd>
-<dt class="label" id="id3"><span class="brackets">CK06</span></dt>
-<dd><p>Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In <em>Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval</em>. ACM, August 2006. URL: <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">https://doi.org/10.1145/1148170.1148245</a>, <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">doi:10.1145/1148170.1148245</a>.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">CKPT92</a></span></dt>
-<dd><p>Douglass R. Cutting, David R. Karger, Jan O. Pedersen, and John W. Tukey. Scatter/gather: a cluster-based approach to browsing large document collections. In <em>Proceedings of the 15th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR \textquotesingle 92</em>. ACM Press, 1992. URL: <a class="reference external" href="https://doi.org/10.1145/133160.133214">https://doi.org/10.1145/133160.133214</a>, <a class="reference external" href="https://doi.org/10.1145/133160.133214">doi:10.1145/133160.133214</a>.</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets">FCB16</span></dt>
-<dd><p>Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In <em>Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</em>. ACM, May 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">https://doi.org/10.1145/2858036.2858535</a>, <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">doi:10.1145/2858036.2858535</a>.</p>
-</dd>
-</dl>
-</div>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="case-study-vasyr-2018">
+<h1><span class="section-number">6. </span>Case Study: VaSyR 2018<a class="headerlink" href="#case-study-vasyr-2018" title="Permalink to this headline">#</a></h1>
+<p>We present an end-to-end example</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -524,17 +419,17 @@ Third, once a list of possible references has been compiled for each dataset, we
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="proposed-solution.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="implementation-options.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Proposed Solution</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Implementation Options</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="methods/query-generation.html" title="next page">
+    <a class='right-next' id="next-link" href="contributors.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Query Generation</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Contributors</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
