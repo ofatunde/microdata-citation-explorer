@@ -31,8 +31,8 @@
 
 
 import pandas as pd
-df = pd.read_csv("semantic_scholar_query_results_with_web_count.csv")
-print(df)
+df = pd.read_csv("./data/semantic_scholar_query_results_with_web_count.csv")
+df.head()
 
 
 # # /mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv

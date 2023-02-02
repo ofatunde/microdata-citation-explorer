@@ -39,14 +39,12 @@ Defining query structure is an important step, as the search output can be sensi
 
 The table below shows the number of results returned by Semantic Scholar for each dataset.
 ```{code-cell} ipython3
-:tags: ["output_scroll"]
+:tags: ["output_scroll","hide-input"]
 import pandas as pd
 df = pd.read_csv("./data/semantic_scholar_query_results_with_web_count.csv")
 df.head()
 ```
-# /mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv
-# data/semantic_scholar_query_results_with_web_count.csv
-# semantic_scholar_query_results_with_web_count.csv
+
 ## Next steps
 After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx") through the semantic scholar API. See [the next section](methods/semantic-search.md) for more details.
 
