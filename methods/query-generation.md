@@ -29,11 +29,11 @@ We start with simple methods of combining the metadata. The key metadata compone
 
 For our initial exploration, we define six simple query types which represent different combinations of the information above :
 
-* Query type 1: lead_org_short + year + name + shortcode
-* Query type 2: lead_org_short + year + name + full_name
-* Query type 3: lead_org_short + year + name + shortcode_fullname
-* Query type 4: lead_org_long + year + name + shortcode
-* Query type 6: lead_org_long + year + name + shortcode_fullname
+* __Query type 1:__ lead_org_short + year + name + shortcode
+* __Query type 2:__ lead_org_short + year + name + full_name
+* __Query type 3:__ lead_org_short + year + name + shortcode_fullname
+* __Query type 4:__ lead_org_long + year + name + shortcode
+* __Query type 6:__ lead_org_long + year + name + shortcode_fullname
 
 Defining query structure is an important step, as the search output can be sensitive to the contents of the query used for the search. For example, the six queries above return different number of results if entered into Semantic Scholar. 
 
@@ -42,11 +42,23 @@ The table below shows the number of results returned by Semantic Scholar for eac
 :tags: ["output_scroll","hide-input"]
 import pandas as pd
 df = pd.read_csv("../data/semantic_scholar_query_results_with_web_count.csv")
-df.head()
+print(df)
+```
+
+Each of these query strings is subsequently passed into the Semantic Scholar API. For example, the following function generates 
+
+```{code-cell}
+# This function takes in the name of our dataframe, the id of the data set and the query number and returns the query.
+def query_finder(df_name: pd.DataFrame, dataset_id: int = 189, query_number:int =1 )->str:
+    """ Function takes in the query dataframe, the dataset ID and the query type number and retuns the query itself"""
+    df_indexid = df_name.set_index('id')
+    query = df_indexid.loc[189][f"query_type{query_number}"]
+    return query 
 ```
 
 ## Next steps
 After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx") through the semantic scholar API. See [the next section](methods/semantic-search.md) for more details.
+
 
 
 ## Citations
