@@ -432,48 +432,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-data-dump-and-query-building-data">
-   3.3.1. import data dump and query building data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-queries">
-   3.3.2. Build queries.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fau-first-authoring-organization">
-   3.3.3. fau = First Authoring Organization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#queries">
-   3.3.4. Queries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-query-type-1-to-query-ss-api">
-   3.3.5. Use query type 1 to query ss API
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#query-type1-for-all-data-sets">
-   3.3.6. Query type1 for all data sets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pausing">
-   3.3.7. Pausing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
-   3.3.8. Next steps
+   3.3.1. Next steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.3.9. Citations
+   3.3.2. Citations
   </a>
  </li>
 </ul>
@@ -496,48 +461,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-data-dump-and-query-building-data">
-   3.3.1. import data dump and query building data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#build-queries">
-   3.3.2. Build queries.
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fau-first-authoring-organization">
-   3.3.3. fau = First Authoring Organization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#queries">
-   3.3.4. Queries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#use-query-type-1-to-query-ss-api">
-   3.3.5. Use query type 1 to query ss API
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#query-type1-for-all-data-sets">
-   3.3.6. Query type1 for all data sets
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pausing">
-   3.3.7. Pausing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
-   3.3.8. Next steps
+   3.3.1. Next steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.3.9. Citations
+   3.3.2. Citations
   </a>
  </li>
 </ul>
@@ -576,194 +506,30 @@ title="Print to PDF"
 <p>The table below shows the number of results returned by Semantic Scholar for each dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;output_scroll&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data\semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data\semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: illegal target for annotation
 </pre></div>
 </div>
 </div>
 </div>
-<p>{::comment}
-(### Import modules</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">semanticscholar</span> <span class="kn">import</span> <span class="n">SemanticScholar</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="kn">import</span> <span class="nn">preprocessor</span> <span class="k">as</span> <span class="nn">p</span>
-<span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">time</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="import-data-dump-and-query-building-data">
-<h2><span class="section-number">3.3.1. </span>import data dump and query building data<a class="headerlink" href="#import-data-dump-and-query-building-data" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Downloads\sample_metadata.json&quot;</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">sample_pdf_parses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Downloads\pdf_parses_sample.json&quot;</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Downloads\overview_all_datasets_2022_categorized.xlsx&quot;</span><span class="p">,</span><span class="n">sheet_name</span> <span class="o">=</span> <span class="s2">&quot;Categorized&quot;</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Downloads\mdl_baseline_summary.csv&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="build-queries">
-<h2><span class="section-number">3.3.2. </span>Build queries.<a class="headerlink" href="#build-queries" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fullname_shortcode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Category&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_short&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">full_query</span><span class="p">)</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Authoring entity short</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_long&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;authoring_entity&quot;</span><span class="p">]</span> <span class="c1">#Authoring entity long</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;nation&quot;</span><span class="p">]</span> <span class="c1"># Extract nation</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;full_query&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># extract year</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="fau-first-authoring-organization">
-<h2><span class="section-number">3.3.3. </span>fau = First Authoring Organization<a class="headerlink" href="#fau-first-authoring-organization" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;short_code&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;full_name&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Category&quot;</span><span class="p">]</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;shortcode_fullname&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span>  <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Category&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="queries">
-<h2><span class="section-number">3.3.4. </span>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">#</a></h2>
-<p>Query type 1: fau_short+year+name+shortcode
-Query type 2: fau_short+year+name+full_name
-Query type 3: fau_short+year+name+shortcode_fullname
-Query type 4: fau_long+year+name+shortcode
-Query type 6: fau_long+year+name+shortcode_fullname</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_short&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;short_code&quot;</span><span class="p">]</span> <span class="c1">#type 1</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_short&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;full_name&quot;</span><span class="p">]</span> <span class="c1">#2</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_short&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;shortcode_fullname&quot;</span><span class="p">]</span> <span class="c1">#3</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type4&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_long&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;short_code&quot;</span><span class="p">]</span> <span class="c1"># 4</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type5&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_long&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;full_name&quot;</span><span class="p">]</span> <span class="c1"># 5</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type6&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;fau_long&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;shortcode_fullname&quot;</span><span class="p">]</span> <span class="c1">#6</span>
-<span class="n">dfq</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-<span class="c1">#dfq.to_excel(r&quot;Downloads\semantic_scholar_queries.xlsx&quot;, index = False)-&gt; Save dataset</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="use-query-type-1-to-query-ss-api">
-<h2><span class="section-number">3.3.5. </span>Use query type 1 to query ss API<a class="headerlink" href="#use-query-type-1-to-query-ss-api" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_finder</span><span class="p">(</span><span class="n">dfq</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sch = SemanticScholar()</span>
-<span class="c1">#results = sch.search_paper(query_finder(dfq, 189,1))</span>
-<span class="n">title</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">abstract</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">results</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-     <span class="n">title</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="n">abstract</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">abstract</span><span class="p">)</span>    
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">title</span><span class="p">,</span><span class="n">abstract</span><span class="p">)),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;abstract&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;dataset_number&quot;</span><span class="p">]</span> <span class="o">=</span><span class="mi">189</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;query_number&quot;</span><span class="p">]</span> <span class="o">=</span><span class="mi">1</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;downloads\streamlitdemo.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function takes in the name of our dataframe, the id of the data set and the query number and returns the query.</span>
-<span class="k">def</span> <span class="nf">query_finder</span><span class="p">(</span><span class="n">df_name</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dataset_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">189</span><span class="p">,</span> <span class="n">query_number</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span><span class="mi">1</span> <span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function takes in the query dataframe, the dataset ID and the query type number and retuns the query itself&quot;&quot;&quot;</span>
-    <span class="n">df_indexid</span> <span class="o">=</span> <span class="n">df_name</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-    <span class="n">query</span> <span class="o">=</span> <span class="n">df_indexid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">189</span><span class="p">][</span><span class="sa">f</span><span class="s2">&quot;query_type</span><span class="si">{</span><span class="n">query_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">query</span> 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="query-type1-for-all-data-sets">
-<h2><span class="section-number">3.3.6. </span>Query type1 for all data sets<a class="headerlink" href="#query-type1-for-all-data-sets" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="pausing">
-<h2><span class="section-number">3.3.7. </span>Pausing<a class="headerlink" href="#pausing" title="Permalink to this headline">#</a></h2>
-<p>{:/comment}</p>
-</section>
 <section id="next-steps">
-<h2><span class="section-number">3.3.8. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <p>After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx”) through the semantic scholar API. See <span class="xref myst">the next section</span> for more details.</p>
 </section>
 <section id="citations">
-<h2><span class="section-number">3.3.9. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id9" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
