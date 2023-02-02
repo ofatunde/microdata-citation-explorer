@@ -8,7 +8,7 @@ The library houses over 500 datasets, many of which are individual waves of a re
 
 ```{figure} ./images/title_anatomy.png
 ---
-height: 150px
+height: 300px
 name: title-anatomy
 ---
 Various components of datasets included in microdata library
