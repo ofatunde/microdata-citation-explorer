@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Semantic search
 
 We made use of the [Semantic Scholar API](https://www.semanticscholar.org/product/api). For each of the query strings generated in the last section, we pass them to the ["Paper Lookup" API endpoint](https://api.semanticscholar.org/api-docs/graph#tag/Paper-Data), which we access through the [SemanticScholar Python library](https://github.com/danielnsilva/semanticscholar) using the following call:
