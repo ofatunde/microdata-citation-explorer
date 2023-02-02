@@ -56,8 +56,10 @@ def query_finder(df_name: pd.DataFrame, dataset_id: int = 189, query_number:int 
     return query 
 ```
 
+Future work will draw on more sophisticated methods of constructing queries.
+
 ## Next steps
-After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx") through the semantic scholar API. See [the next section](methods/semantic-search.md) for more details.
+After generating these queries, we treat them as inputs to the Semantic Scholar API. See [the next section](methods/semantic-search.md) for more details.
 
 
 
