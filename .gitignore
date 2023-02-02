@@ -1,5 +1,6 @@
 methods/archived-query-generation-content.py
-
+yaml.md
+proposed-solution-copy.md
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
