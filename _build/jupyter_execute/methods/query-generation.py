@@ -30,9 +30,6 @@
 # In[1]:
 
 
-"tags": [
-        "output_scroll",
-    ]
 import pandas as pd
 df = pd.read_csv(r"data\semantic_scholar_query_results_with_web_count.csv")
 print(df)
