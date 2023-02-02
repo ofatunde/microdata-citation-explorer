@@ -6,7 +6,7 @@ We want to 1) better understand the impact it’s having, and 2) optimize it and
 
 The library houses over 500 datasets, many of which are individual waves of a repeated survey. Many surveys are conducted in multiple waves, which differ by year, geography, or context. Location can be at the national, regional, or camp level.
 
-```{figure} images/title_anatomy.png
+```{figure} ./images/title_anatomy.png
 ---
 height: 150px
 name: title-anatomy
