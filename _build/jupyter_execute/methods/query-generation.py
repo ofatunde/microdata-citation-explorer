@@ -31,7 +31,7 @@
 
 
 import pandas as pd
-df = pd.read_csv(r"data\semantic_scholar_query_results_with_web_count.csv")
+df = pd.read_csv(r"data/semantic_scholar_query_results_with_web_count.csv")
 print(df)
 
 
