@@ -432,53 +432,48 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-modules">
-   3.3.1. Import modules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-data-dump-and-query-building-data">
-   3.3.2. import data dump and query building data
+   3.3.1. import data dump and query building data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#build-queries">
-   3.3.3. Build queries.
+   3.3.2. Build queries.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fau-first-authoring-organization">
-   3.3.4. fau = First Authoring Organization
+   3.3.3. fau = First Authoring Organization
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#queries">
-   3.3.5. Queries
+   3.3.4. Queries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#use-query-type-1-to-query-ss-api">
-   3.3.6. Use query type 1 to query ss API
+   3.3.5. Use query type 1 to query ss API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#query-type1-for-all-data-sets">
-   3.3.7. Query type1 for all data sets
+   3.3.6. Query type1 for all data sets
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pausing">
-   3.3.8. Pausing
+   3.3.7. Pausing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
-   3.3.9. Next steps
+   3.3.8. Next steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.3.10. Citations
+   3.3.9. Citations
   </a>
  </li>
 </ul>
@@ -501,53 +496,48 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-modules">
-   3.3.1. Import modules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-data-dump-and-query-building-data">
-   3.3.2. import data dump and query building data
+   3.3.1. import data dump and query building data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#build-queries">
-   3.3.3. Build queries.
+   3.3.2. Build queries.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fau-first-authoring-organization">
-   3.3.4. fau = First Authoring Organization
+   3.3.3. fau = First Authoring Organization
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#queries">
-   3.3.5. Queries
+   3.3.4. Queries
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#use-query-type-1-to-query-ss-api">
-   3.3.6. Use query type 1 to query ss API
+   3.3.5. Use query type 1 to query ss API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#query-type1-for-all-data-sets">
-   3.3.7. Query type1 for all data sets
+   3.3.6. Query type1 for all data sets
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pausing">
-   3.3.8. Pausing
+   3.3.7. Pausing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#next-steps">
-   3.3.9. Next steps
+   3.3.8. Next steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.3.10. Citations
+   3.3.9. Citations
   </a>
  </li>
 </ul>
@@ -569,21 +559,44 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Core survey name</p></li>
 <li><p>Survey abbreviation (e.g., VaSyR)</p></li>
-<li><p>Lead organization (e.g., UNHCR)</p></li>
+<li><p>Lead organization (e.g., UNHCR) - short or long versions may be used</p></li>
 <li><p>Category (e.g., Socioeconomic Asessment of Refugees)</p></li>
 <li><p>Country</p></li>
 <li><p>Year</p></li>
 </ul>
-<p>For our initial exploration, we define six query types:</p>
+<p>For our initial exploration, we define six simple query types which represent different combinations of the information above :</p>
 <ul class="simple">
-<li><p>Query type 1: fau_short+year+name+shortcode</p></li>
-<li><p>Query type 2: fau_short+year+name+full_name</p></li>
-<li><p>Query type 3: fau_short+year+name+shortcode_fullname</p></li>
-<li><p>Query type 4: fau_long+year+name+shortcode</p></li>
-<li><p>Query type 6: fau_long+year+name+shortcode_fullname</p></li>
+<li><p>Query type 1: lead_org_short + year + name + shortcode</p></li>
+<li><p>Query type 2: lead_org_short + year + name + full_name</p></li>
+<li><p>Query type 3: lead_org_short + year + name + shortcode_fullname</p></li>
+<li><p>Query type 4: lead_org_long + year + name + shortcode</p></li>
+<li><p>Query type 6: lead_org_long + year + name + shortcode_fullname</p></li>
 </ul>
-<section id="import-modules">
-<h2><span class="section-number">3.3.1. </span>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">#</a></h2>
+<p>Defining query structure is an important step, as the search output can be sensitive to the contents of the query used for the search. For example, the six queries above return different number of results if entered into Semantic Scholar.</p>
+<p>The table below shows the number of results returned by Semantic Scholar for each dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data\semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;data\semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>{::comment}
+(### Import modules</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -598,22 +611,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">semanticscholar</span> <span class="kn">import</span> <span class="n">SemanticScholar</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
 </div>
-</div>
-</div>
-</section>
 <section id="import-data-dump-and-query-building-data">
-<h2><span class="section-number">3.3.2. </span>import data dump and query building data<a class="headerlink" href="#import-data-dump-and-query-building-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>import data dump and query building data<a class="headerlink" href="#import-data-dump-and-query-building-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Downloads\sample_metadata.json&quot;</span><span class="p">,</span> <span class="n">lines</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -626,7 +626,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="build-queries">
-<h2><span class="section-number">3.3.3. </span>Build queries.<a class="headerlink" href="#build-queries" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>Build queries.<a class="headerlink" href="#build-queries" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;fullname_shortcode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Category&quot;</span><span class="p">]</span><span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span>
@@ -653,7 +653,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="fau-first-authoring-organization">
-<h2><span class="section-number">3.3.4. </span>fau = First Authoring Organization<a class="headerlink" href="#fau-first-authoring-organization" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.3. </span>fau = First Authoring Organization<a class="headerlink" href="#fau-first-authoring-organization" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;short_code&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;abbreviation&quot;</span><span class="p">]</span>
@@ -665,7 +665,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="queries">
-<h2><span class="section-number">3.3.5. </span>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.4. </span>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">#</a></h2>
 <p>Query type 1: fau_short+year+name+shortcode
 Query type 2: fau_short+year+name+full_name
 Query type 3: fau_short+year+name+shortcode_fullname
@@ -687,7 +687,7 @@ Query type 6: fau_long+year+name+shortcode_fullname</p>
 </div>
 </section>
 <section id="use-query-type-1-to-query-ss-api">
-<h2><span class="section-number">3.3.6. </span>Use query type 1 to query ss API<a class="headerlink" href="#use-query-type-1-to-query-ss-api" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.5. </span>Use query type 1 to query ss API<a class="headerlink" href="#use-query-type-1-to-query-ss-api" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query_finder</span><span class="p">(</span><span class="n">dfq</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -752,31 +752,44 @@ Query type 6: fau_long+year+name+shortcode_fullname</p>
 </div>
 </section>
 <section id="query-type1-for-all-data-sets">
-<h2><span class="section-number">3.3.7. </span>Query type1 for all data sets<a class="headerlink" href="#query-type1-for-all-data-sets" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.6. </span>Query type1 for all data sets<a class="headerlink" href="#query-type1-for-all-data-sets" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="pausing">
-<h2><span class="section-number">3.3.8. </span>Pausing<a class="headerlink" href="#pausing" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.7. </span>Pausing<a class="headerlink" href="#pausing" title="Permalink to this headline">#</a></h2>
+<p>{:/comment}</p>
 </section>
 <section id="next-steps">
-<h2><span class="section-number">3.3.9. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
-<p>After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx”) through the semantic scholar API. See <span class="xref myst">the next section</span> for more detailes.</p>
+<h2><span class="section-number">3.3.8. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<p>After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx”) through the semantic scholar API. See <span class="xref myst">the next section</span> for more details.</p>
 </section>
 <section id="citations">
-<h2><span class="section-number">3.3.10. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="#id5" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
+<h2><span class="section-number">3.3.9. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
+<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id9" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">BK16</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">BK16</a></span></dt>
 <dd><p>Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In <em>Proceedings of the 2016 International Conference on Management of Data</em>. ACM, June 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">https://doi.org/10.1145/2882903.2915210</a>, <a class="reference external" href="https://doi.org/10.1145/2882903.2915210">doi:10.1145/2882903.2915210</a>.</p>
 </dd>
-<dt class="label" id="id3"><span class="brackets">CK06</span></dt>
+<dt class="label" id="id7"><span class="brackets">CK06</span></dt>
 <dd><p>Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In <em>Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval</em>. ACM, August 2006. URL: <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">https://doi.org/10.1145/1148170.1148245</a>, <a class="reference external" href="https://doi.org/10.1145/1148170.1148245">doi:10.1145/1148170.1148245</a>.</p>
 </dd>
-<dt class="label" id="id6"><span class="brackets">CKPT92</span></dt>
+<dt class="label" id="id6"><span class="brackets">CAvZC19</span></dt>
+<dd><p>Arman Cohan, Waleed Ammar, Madeleine van Zuylen, and Field Cady. Structural scaffolds for citation intent classification in scientific publications. In <em>Proceedings of the 2019 Conference of the North</em>. Association for Computational Linguistics, 2019. URL: <a class="reference external" href="https://doi.org/10.18653/v1/n19-1361">https://doi.org/10.18653/v1/n19-1361</a>, <a class="reference external" href="https://doi.org/10.18653/v1/n19-1361">doi:10.18653/v1/n19-1361</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">CKPT92</span></dt>
 <dd><p>Douglass R. Cutting, David R. Karger, Jan O. Pedersen, and John W. Tukey. Scatter/gather: a cluster-based approach to browsing large document collections. In <em>Proceedings of the 15th annual international ACM SIGIR conference on Research and development in information retrieval - SIGIR \textquotesingle 92</em>. ACM Press, 1992. URL: <a class="reference external" href="https://doi.org/10.1145/133160.133214">https://doi.org/10.1145/133160.133214</a>, <a class="reference external" href="https://doi.org/10.1145/133160.133214">doi:10.1145/133160.133214</a>.</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets">FCB16</span></dt>
+<dt class="label" id="id8"><span class="brackets">FCB16</span></dt>
 <dd><p>Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In <em>Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems</em>. ACM, May 2016. URL: <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">https://doi.org/10.1145/2858036.2858535</a>, <a class="reference external" href="https://doi.org/10.1145/2858036.2858535">doi:10.1145/2858036.2858535</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">JKH+18</span></dt>
+<dd><p>David Jurgens, Srijan Kumar, Raine Hoover, Dan McFarland, and Dan Jurafsky. Measuring the evolution of a scientific field through citation frames. <em>Transactions of the Association for Computational Linguistics</em>, 6:391–406, December 2018. URL: <a class="reference external" href="https://doi.org/10.1162/tacl_a_00028">https://doi.org/10.1162/tacl_a_00028</a>, <a class="reference external" href="https://doi.org/10.1162/tacl_a_00028">doi:10.1162/tacl_a_00028</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">TST06</span></dt>
+<dd><p>Simone Teufel, Advaith Siddharthan, and Dan Tidhar. An annotation scheme for citation function. In <em>Proceedings of the 7th SIGdial Workshop on Discourse and Dialogue</em>, 80–87. Sydney, Australia, July 2006. Association for Computational Linguistics. URL: <a class="reference external" href="https://aclanthology.org/W06-1312">https://aclanthology.org/W06-1312</a>.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">VEHE15</span></dt>
+<dd><p>Marco Antonio Valenzuela-Escarcega, Vu A. Ha, and Oren Etzioni. Identifying meaningful citations. In <em>AAAI Workshop: Scholarly Big Data</em>. 2015.</p>
 </dd>
 </dl>
 </div>
