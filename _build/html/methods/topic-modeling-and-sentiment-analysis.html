@@ -426,12 +426,40 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="topic-modeling-and-sentiment-analysis">
 <h1><span class="section-number">3.5. </span>Topic Modeling and Sentiment Analysis<a class="headerlink" href="#topic-modeling-and-sentiment-analysis" title="Permalink to this headline">#</a></h1>
-<p>We make use of the NLP4Dev API. Specifically, we use the “Analyze File” endpoint, which allows us to use the abstract or full text of a paper as an input and retrieve information about the paper content as an output.</p>
-<p>We run the abstracts from the <strong>“query_typex_abs”</strong> through the NLP4DEV API. We convert the response objects into three types of datasets: <strong>“NLP4DEV_qx”</strong>, <strong>“topic_importance_querytypex”</strong>, and <strong>“nlpdev_queryx”</strong>. <strong>“NLP4DEV_qx”</strong> datasets contain the metadata from the NLP4DEV API: country counts, country group, JDC tags, the tag counts, the dataset ID, Corpus ID, and the country that is mentioned the most.  “nlpdev_queryx datasets containing the raw data dump from the NLP4DEV API. Basically, “nlpdev_queryx is the raw version of NLP4DEV_qx. These datasets can be found in the NLP4DEV datasets folder on the cloud.</p>
-<p>“topic_importance_querytypex” datasets contain the topic importance. The default number of topics returned from the NLP4DEV API is 10.</p>
-<p>We merge the semantic scholar metadata(<strong>“query_typex_abs.csv”</strong>) and the metadata (<strong>“NLP4DEV_qx”</strong>) files we get from running the abstracts through the NLP4DEV API. The datasets labeled <strong>“ss_NLP4_queryx_merge”</strong> and <strong>“qx_ss_nlpdev_master”</strong> are the results of different types or merges from the two metadata sources. If in doubt, use the <strong>“qx_ss_nlpdev_master”</strong> datasets.</p>
-<p><strong>“qx_datasets”</strong> contain the  datasets that returned queries from the NLP4DEV API for each query. This returns the datasets that do not have HTML tags.
-<strong>“qx_qx_sample_streamlit_demo”</strong> and <strong>“qx_qx_demo_short”</strong> contain the following variables: <strong>title</strong>, <strong>abstract</strong>, <strong>dataset number</strong>, and <strong>query number</strong>.
+<p>We imported the documents available in the Semantic Scholar and NPL4Dev corpuses.</p>
+<p>We make use of the [NLP4Dev API] (<a class="reference external" href="https://www.nlp4dev.org/content-api">https://www.nlp4dev.org/content-api</a>). Depending on whether the paper contents are available in parsed or PDF formay, we use either the “Analyze Text” or the “Analyze File” endpoint. In both cases we make use of the Mallet topic model, which allows us to use the abstract or full text of a paper as an input and retrieve information about the paper content as an output.</p>
+<p>We run the abstracts or PDF text from the <strong>“query_typex_abs”</strong> through the NLP4DEV API. We convert the response objects into three types of datasets: <strong>“NLP4DEV_qx”</strong>, <strong>“topic_importance_querytypex”</strong>, and <strong>“nlpdev_queryx”</strong>. <strong>“NLP4DEV_qx”</strong> datasets contain the metadata from the NLP4DEV API:</p>
+<ul class="simple">
+<li><p>country counts</p></li>
+<li><p>country group</p></li>
+<li><p>JDC tags (a list of phrases defined by NLP4Dev as being related to forced displacement)</p></li>
+<li><p>the tag counts</p></li>
+<li><p>dataset ID</p></li>
+<li><p>Corpus ID</p></li>
+<li><p>the country that is mentioned the most.</p></li>
+</ul>
+<p>The JDC tags include the following:</p>
+<ul class="simple">
+<li><p>“asylum seeker”</p></li>
+<li><p>“climate refugee”</p></li>
+<li><p>“country of asylum”</p></li>
+<li><p>“exile”</p></li>
+<li><p>” forced displacement”</p></li>
+<li><p>“host community”</p></li>
+<li><p>“internally displaced population”</p></li>
+<li><p>“ocha”, “population of concern”</p></li>
+<li><p>“refugee”</p></li>
+<li><p>” refugee camp”</p></li>
+<li><p>“repatriate”</p></li>
+<li><p>“resetlement area”</p></li>
+<li><p>“returnee”</p></li>
+<li><p>“stateless”</p></li>
+<li><p>“unhcr”</p></li>
+</ul>
+<p>[ include a sample of text showing topic distribution ]</p>
+<p>We use the outputs from the NLP4Dev to calculate a “relevance” score for each dataset-paper compbination</p>
+<p>The outputs of this relevance function are returned to users in our <span class="xref myst">user tool</span>.</p>
+<p><strong>“qx_qx_sample_streamlit_demo”</strong> and <strong>“qx_qx_demo_short”</strong> contain the following variables: <strong>title</strong>, <strong>abstract</strong>, <strong>dataset number</strong>, and <strong>query number</strong>.
 <strong>“qx_qx_sample_results”</strong> datasets contain the information we need to display in the app. It contains the following variables: <strong>dataset title</strong>, <strong>paper title</strong>, <strong>relevance</strong>, <strong>JDC tags</strong>, <strong>value</strong>, and <strong>topic percentages</strong>.</p>
 <section id="citations">
 <h2><span class="section-number">3.5.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>

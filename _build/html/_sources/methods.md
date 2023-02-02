@@ -1,6 +1,11 @@
 # Methods
 
-This paper describes a methodology for systematically monitoring the use of UNHCR microdata. We develop a workflow for searching literature repositories with an initial focus on academic research, but with plans to include “grey literature” in the future. We take a three-step approach to producing a comprehensive and informative list of the papers that reference a particular dataset. First, for a given dataset, we begin by combining information from the metadata fields available for the study and using these terms to form multiple and overlapping search queries; these include the primary authoring organization, the year of the survey, and the country in which the study was carried out. Second, we use the generated query strings to generate sets of search results for each UNHCR microdata set from Semantic Scholar.
+This paper describes a methodology for systematically monitoring the use of UNHCR microdata. We develop a workflow for searching literature repositories with an initial focus on academic research, but with plans to include “grey literature” in the future. We take a three-step approach to producing a comprehensive and informative list of the papers that reference a particular dataset. 
+
+First, for a given dataset, we begin by combining information from the metadata fields available for the study and using these terms to form multiple and overlapping search queries; these include the primary authoring organization, the year of the survey, and the country in which the study was carried out. 
+
+Second, we use the generated query strings to generate sets of search results for each UNHCR microdata set from Semantic Scholar.
+
 Third, once a list of possible references has been compiled for each dataset, we compute for each reference a measure of its relevance to the dataset in question using Natural Language Processing (NLP). We first generate a list of topics contained in each reference using the topic modeling and analysis tools made available by NLP4Dev (https://www.nlp4dev.org/). To classify each possible reference by relevance to a given dataset, we consider 1) the share of identified topics related to forced displacement, 2) the set of countries mentioned in the reference, and 3) the frequency of a curated set of key-word tags related to forced displacement. 
 
 
@@ -19,7 +24,6 @@ We use two external tools: APIs powered by Semantic Scholar and NLP4Dev. We load
 ## Citations
 
 The following papers informed our approach: {cite}`Cutting1992`.
-
 
 ```{bibliography}
 ```

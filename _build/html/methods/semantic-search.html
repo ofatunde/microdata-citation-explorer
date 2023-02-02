@@ -427,17 +427,29 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="semantic-search">
 <h1><span class="section-number">3.4. </span>Semantic search<a class="headerlink" href="#semantic-search" title="Permalink to this headline">#</a></h1>
 <p>We made use of the <a class="reference external" href="https://www.semanticscholar.org/product/api">Semantic Scholar API</a>. For each of the query strings generated in the last section, we pass them to the <a class="reference external" href="https://api.semanticscholar.org/api-docs/graph#tag/Paper-Data">“Paper Lookup” API endpoint</a>, which we access through the <a class="reference external" href="https://github.com/danielnsilva/semanticscholar">SemanticScholar Python library</a> using the following call:</p>
-<p>The output is an object containing the following information:</p>
+<p>The output is an object which includes (among others) the following information:</p>
 <ul class="simple">
+<li><p>Dataset ID</p></li>
 <li><p>Paper IDs (includes SS’s internal ID, as well as external IDs such as DOI, arXiv, Pubmed, etc. where available)</p></li>
 <li><p>Title</p></li>
 <li><p>Authors</p></li>
-<li><p>Publicaiton venue</p></li>
+<li><p>Publication venue</p></li>
 <li><p>Publication year</p></li>
 <li><p>Field of Study</p></li>
-<li><p>PDF availability (indi)</p></li>
+<li><p>Count of inbound and outbound citations</p></li>
+<li><p>URL</p></li>
+<li><p>Abstract</p></li>
+<li><p>PDF availability (indicates whether the full PDF is included in the corpus, and whether the abstract, body, and bibliographic entries are available in parsedt format)</p></li>
 </ul>
-<p>From the Semantic Scholar API, we get the datasets labeled <strong>“query_typex_abs,”</strong> where the x  in the name = 1,2,3,4,5,6 refers to the query type. These datasets contain the following variables: <strong>paper title, abstract, corpus ID (also called paper ID), author IDs, Digital Object identifiers (DOIs), publication year,</strong> the <strong>journal</strong>  where the paper was published, and the <strong>dataset ID</strong>. These metadata datasets will be merged with the metadata datasets we get from the NLP4DEV API website.</p>
+<p>We extract abstracts from this output, giving us an abstract for each dataset-query-paper combination where an abstract is available. The abstract, together with the indicator of PDF availability, serves as an input into our topic modeling procedure (see the next section.)</p>
+<p>Where available, we also parse PDF content. When we parse a PDF, the output is an object which includes (among others) the following information:</p>
+<ul class="simple">
+<li><p>Paper ID</p></li>
+<li><p>PDF hash</p></li>
+<li><p>Abstract (if available)</p></li>
+<li><p>Body text (if available)</p></li>
+<li><p>Bibliographic entries</p></li>
+</ul>
 <section id="citations">
 <h2><span class="section-number">3.4.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id8" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="../proposed-solution%20copy.html#id7" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>

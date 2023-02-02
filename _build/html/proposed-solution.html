@@ -136,34 +136,66 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="methods/query-generation.html">
-     3.2. Query Generation
+     3.3. Query Generation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="methods/semantic-search.html">
-     3.3. Semantic search
+     3.4. Semantic search
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="methods/topic-modeling-and-sentiment-analysis.html">
-     3.4. Topic Modeling and Sentiment Analysis
+     3.5. Topic Modeling and Sentiment Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="methods/network-analysis.html">
+     3.6. Network Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="results.html">
+   4. Results
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="results/model-output.html">
+     4.3. Model output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="results/evaluating-model-performance.html">
+     4.4. Evaluating model performance
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="implementation-options.html">
-   4. Implementation Options
+   5. Implementation Options
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="case-study.html">
+   6. Case Study: VaSyR 2018
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="contributors.html">
-   5. Contributors
+   7. Contributors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   6. Bibliography
+   8. Bibliography
   </a>
  </li>
  <li class="toctree-l1">
@@ -407,18 +439,21 @@ title="Print to PDF"
 <p>Our proposed solution is an automated process which generates outputs at two levels.</p>
 <section id="dataset-level-outputs">
 <h2><span class="section-number">2.1. </span>Dataset-level outputs<a class="headerlink" href="#dataset-level-outputs" title="Permalink to this headline">#</a></h2>
-<p>List of citing papers
-Distribution of fields of study
-Distribution of nature of use</p>
+<ul class="simple">
+<li><p>List of citing papers</p></li>
+<li><p>Distribution of fields of study</p></li>
+<li><p>Distribution of nature of use</p></li>
+</ul>
 </section>
 <section id="library-level-outputs">
 <h2><span class="section-number">2.2. </span>Library-level outputs<a class="headerlink" href="#library-level-outputs" title="Permalink to this headline">#</a></h2>
-<p>Network of citing authors
-Network of citing disciplines</p>
-<p>Here is a “note” directive:</p>
+<ul class="simple">
+<li><p>Network of citing authors</p></li>
+<li><p>Network of citing disciplines</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here is a note</p>
+<p>Citing disciplines depend on categories defined by external institutions.</p>
 </div>
 <p>We hope that this approach will provide value to multiple stakeholders, such as:</p>
 <table class="colwidths-auto table">
@@ -428,7 +463,7 @@ Network of citing disciplines</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>UNHCR/GDS Microdata Curation Team</p></td>
+<tr class="row-even"><td><p>UNHCR/ GDS Microdata Curation Team</p></td>
 <td><p>Automated procedure saves time and identifies citations that would otherwise be missed, and usage statistics will give the team objective information on which datasets are useful</p></td>
 </tr>
 <tr class="row-odd"><td><p>UNHCR Operations</p></td>
