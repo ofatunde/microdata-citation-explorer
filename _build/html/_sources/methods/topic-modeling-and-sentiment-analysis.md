@@ -1,6 +1,6 @@
 # Topic Modeling and Sentiment Analysis
 
-We make use of the NLP4Dev API.
+We make use of the NLP4Dev API. Specifically, we use the "Analyze File" endpoint, which allows us to use the abstract or full text of a paper as an input and retrieve information about the paper content as an output.
 
 We run the abstracts from the **“query_typex_abs”** through the NLP4DEV API. We convert the response objects into three types of datasets: **“NLP4DEV_qx”**, **“topic_importance_querytypex”**, and **“nlpdev_queryx"**. **“NLP4DEV_qx”** datasets contain the metadata from the NLP4DEV API: country counts, country group, JDC tags, the tag counts, the dataset ID, Corpus ID, and the country that is mentioned the most.  “nlpdev_queryx datasets containing the raw data dump from the NLP4DEV API. Basically, “nlpdev_queryx is the raw version of NLP4DEV_qx. These datasets can be found in the NLP4DEV datasets folder on the cloud. 
 
