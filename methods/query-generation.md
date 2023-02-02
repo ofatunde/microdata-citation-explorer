@@ -41,7 +41,7 @@ The table below shows the number of results returned by Semantic Scholar for eac
 ```{code-cell} ipython3
 :tags: ["output_scroll"]
 import pandas as pd
-df = pd.read_csv(r"data/semantic_scholar_query_results_with_web_count.csv")
+df = pd.read_csv(r"./data/semantic_scholar_query_results_with_web_count.csv")
 print(df)
 ```
 /mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv
