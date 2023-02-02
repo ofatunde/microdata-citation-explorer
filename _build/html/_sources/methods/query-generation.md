@@ -41,7 +41,7 @@ The table below shows the number of results returned by Semantic Scholar for eac
 ```{code-cell} ipython3
 :tags: ["output_scroll","hide-input"]
 import pandas as pd
-df = pd.read_csv("./jupyter_execute/data/semantic_scholar_query_results_with_web_count.csv")
+df = pd.read_csv("../jupyter_execute/data/semantic_scholar_query_results_with_web_count.csv")
 df.head()
 ```
 
