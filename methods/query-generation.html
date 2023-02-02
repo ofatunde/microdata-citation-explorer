@@ -496,11 +496,11 @@ title="Print to PDF"
 </ul>
 <p>For our initial exploration, we define six simple query types which represent different combinations of the information above :</p>
 <ul class="simple">
-<li><p>Query type 1: lead_org_short + year + name + shortcode</p></li>
-<li><p>Query type 2: lead_org_short + year + name + full_name</p></li>
-<li><p>Query type 3: lead_org_short + year + name + shortcode_fullname</p></li>
-<li><p>Query type 4: lead_org_long + year + name + shortcode</p></li>
-<li><p>Query type 6: lead_org_long + year + name + shortcode_fullname</p></li>
+<li><p><strong>Query type 1:</strong> lead_org_short + year + name + shortcode</p></li>
+<li><p><strong>Query type 2:</strong> lead_org_short + year + name + full_name</p></li>
+<li><p><strong>Query type 3:</strong> lead_org_short + year + name + shortcode_fullname</p></li>
+<li><p><strong>Query type 4:</strong> lead_org_long + year + name + shortcode</p></li>
+<li><p><strong>Query type 6:</strong> lead_org_long + year + name + shortcode_fullname</p></li>
 </ul>
 <p>Defining query structure is an important step, as the search output can be sensitive to the contents of the query used for the search. For example, the six queries above return different number of results if entered into Semantic Scholar.</p>
 <p>The table below shows the number of results returned by Semantic Scholar for each dataset.</p>
@@ -508,98 +508,67 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      id  query_type1_pubs  query_type2_pubs  query_type3_pubs  \
+0     16                93                 2                 0   
+1    114                12                 0                 0   
+2    131                 3                 0                 0   
+3    132                34                 0                 0   
+4    136                15                49                 2   
+..   ...               ...               ...               ...   
+478  699                 2                 8                 0   
+479  700                 2                 8                 0   
+480  701                 1                 1                 0   
+481  703                 6                 0                 0   
+482  704                 0                 0                 0   
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+     query_type4_pubs  query_type5_pubs  query_type6_pubs  \
+0                   0                 0                 0   
+1                1978                 2                 2   
+2                   0                 0                 0   
+3                   0                 0                 0   
+4                  15                49                 2   
+..                ...               ...               ...   
+478                 0                 0                 0   
+479                 0                 0                 0   
+480                 0                 0                 0   
+481                 0                 0                 0   
+482                 0                 0                 0   
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>query_type1_pubs</th>
-      <th>query_type2_pubs</th>
-      <th>query_type3_pubs</th>
-      <th>query_type4_pubs</th>
-      <th>query_type5_pubs</th>
-      <th>query_type6_pubs</th>
-      <th>no_related_pubs_jdc_website</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>16</td>
-      <td>93</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>114</td>
-      <td>12</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1978</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>131</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>132</td>
-      <td>34</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>136</td>
-      <td>15</td>
-      <td>49</td>
-      <td>2</td>
-      <td>15</td>
-      <td>49</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+     no_related_pubs_jdc_website  
+0                              0  
+1                              1  
+2                              0  
+3                              0  
+4                              2  
+..                           ...  
+478                            0  
+479                            0  
+480                            0  
+481                            0  
+482                            0  
+
+[483 rows x 8 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each of these query strings is subsequently passed into the Semantic Scholar API. For example, the following function generates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function takes in the name of our dataframe, the id of the data set and the query number and returns the query.</span>
+<span class="k">def</span> <span class="nf">query_finder</span><span class="p">(</span><span class="n">df_name</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">dataset_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">189</span><span class="p">,</span> <span class="n">query_number</span><span class="p">:</span><span class="nb">int</span> <span class="o">=</span><span class="mi">1</span> <span class="p">)</span><span class="o">-&gt;</span><span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Function takes in the query dataframe, the dataset ID and the query type number and retuns the query itself&quot;&quot;&quot;</span>
+    <span class="n">df_indexid</span> <span class="o">=</span> <span class="n">df_name</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">df_indexid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">189</span><span class="p">][</span><span class="sa">f</span><span class="s2">&quot;query_type</span><span class="si">{</span><span class="n">query_number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">query</span> 
+</pre></div>
+</div>
+</div>
 </div>
 <section id="next-steps">
 <h2><span class="section-number">3.3.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>

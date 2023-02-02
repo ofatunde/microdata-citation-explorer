@@ -426,7 +426,17 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="semantic-search">
 <h1><span class="section-number">3.4. </span>Semantic search<a class="headerlink" href="#semantic-search" title="Permalink to this headline">#</a></h1>
-<p>We made use of the Semantic Scholar API.</p>
+<p>We made use of the <a class="reference external" href="https://www.semanticscholar.org/product/api">Semantic Scholar API</a>. For each of the query strings generated in the last section, we pass them to the <a class="reference external" href="https://api.semanticscholar.org/api-docs/graph#tag/Paper-Data">“Paper Lookup” API endpoint</a>, which we access through the <a class="reference external" href="https://github.com/danielnsilva/semanticscholar">SemanticScholar Python library</a> using the following call:</p>
+<p>The output is an object containing the following information:</p>
+<ul class="simple">
+<li><p>Paper IDs (includes SS’s internal ID, as well as external IDs such as DOI, arXiv, Pubmed, etc. where available)</p></li>
+<li><p>Title</p></li>
+<li><p>Authors</p></li>
+<li><p>Publicaiton venue</p></li>
+<li><p>Publication year</p></li>
+<li><p>Field of Study</p></li>
+<li><p>PDF availability (indi)</p></li>
+</ul>
 <p>From the Semantic Scholar API, we get the datasets labeled <strong>“query_typex_abs,”</strong> where the x  in the name = 1,2,3,4,5,6 refers to the query type. These datasets contain the following variables: <strong>paper title, abstract, corpus ID (also called paper ID), author IDs, Digital Object identifiers (DOIs), publication year,</strong> the <strong>journal</strong>  where the paper was published, and the <strong>dataset ID</strong>. These metadata datasets will be merged with the metadata datasets we get from the NLP4DEV API website.</p>
 <section id="citations">
 <h2><span class="section-number">3.4.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
