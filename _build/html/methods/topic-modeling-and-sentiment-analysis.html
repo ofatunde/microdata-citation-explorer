@@ -259,6 +259,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/methods/topic-modeling-and-sentiment-analysis.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -325,6 +354,23 @@ title="Open an issue"
   </button>
   <div class="menu-dropdown__content">
     <ul>
+      <li>
+        <a href="../_sources/methods/topic-modeling-and-sentiment-analysis.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
       <li>
         <a href="../_sources/methods/topic-modeling-and-sentiment-analysis.md"
    class="headerbtn"
@@ -428,7 +474,7 @@ title="Print to PDF"
 <h1><span class="section-number">3.5. </span>Topic Modeling and Sentiment Analysis<a class="headerlink" href="#topic-modeling-and-sentiment-analysis" title="Permalink to this headline">#</a></h1>
 <p>We imported the documents available in the Semantic Scholar and NPL4Dev corpuses.</p>
 <p>We make use of the [NLP4Dev API] (<a class="reference external" href="https://www.nlp4dev.org/content-api">https://www.nlp4dev.org/content-api</a>). Depending on whether the paper contents are available in parsed or PDF formay, we use either the “Analyze Text” or the “Analyze File” endpoint. In both cases we make use of the Mallet topic model, which allows us to use the abstract or full text of a paper as an input and retrieve information about the paper content as an output.</p>
-<p>We run the abstracts or PDF text from the <strong>“query_typex_abs”</strong> through the NLP4DEV API. We convert the response objects into three types of datasets: <strong>“NLP4DEV_qx”</strong>, <strong>“topic_importance_querytypex”</strong>, and <strong>“nlpdev_queryx”</strong>. <strong>“NLP4DEV_qx”</strong> datasets contain the metadata from the NLP4DEV API:</p>
+<p>We run the abstracts or PDF text from the Semantic Scholar results through the NLP4DEV API, which returns the following information:</p>
 <ul class="simple">
 <li><p>country counts</p></li>
 <li><p>country group</p></li>
@@ -456,14 +502,86 @@ title="Print to PDF"
 <li><p>“stateless”</p></li>
 <li><p>“unhcr”</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NLP4Dev</span><span class="p">(</span><span class="n">abstract_or_fulltext</span><span class="p">,</span><span class="n">text_source</span><span class="p">):</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">abstract_or_fulltext</span> <span class="o">==</span> <span class="s1">&#39;PDF&#39;</span><span class="p">):</span>
+        <span class="c1">#extract output using &quot;Analyze_file&quot; endpoint</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_file&quot;</span>
+        <span class="n">payload</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;</span><span class="p">}</span>
+        <span class="n">files</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;file&#39;</span><span class="p">,(</span><span class="s1">&#39;mdl-explorer-app/data/02637758211070565.pdf&#39;</span><span class="p">,</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/02637758211070565.pdf&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">),</span><span class="s1">&#39;application/pdf&#39;</span><span class="p">))]</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">topic_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doc_topic_words&#39;</span><span class="p">)</span>
+        <span class="n">country_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country_details&#39;</span><span class="p">)</span>
+        <span class="n">tag_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jdc_tag_counts&#39;</span><span class="p">)</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">abstract_or_fulltext</span> <span class="o">==</span> <span class="s1">&#39;parsed_PDF&#39;</span><span class="p">):</span>
+        <span class="c1">#extract output using &quot;Analyze_text&quot; endpoint on full extracted text</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_text&quot;</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_source</span> <span class="p">}</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">topic_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doc_topic_words&#39;</span><span class="p">)</span>
+        <span class="n">country_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country_details&#39;</span><span class="p">)</span>
+        <span class="n">tag_distribution</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jdc_tag_counts&#39;</span><span class="p">)</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">abstract_or_fulltext</span> <span class="o">==</span> <span class="s1">&#39;abstract_only&#39;</span><span class="p">):</span>
+        <span class="c1">#extract output using &quot;Analyze_text&quot; endpoint on abstract text</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.nlp4dev.org/nlp/models/mallet/analyze_text&quot;</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;model_id&quot;</span><span class="p">:</span> <span class="s2">&quot;6fd8b418cbe4af7a1b3d24debfafa1ee&quot;</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">text_source</span> <span class="p">}</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">topic_distribution</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;doc_topic_words&#39;</span><span class="p">))</span>
+        <span class="n">country_distribution</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;country_details&#39;</span><span class="p">))</span>
+        <span class="n">tag_distribution</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jdc_tag_counts&#39;</span><span class="p">))</span>
+        <span class="n">topic_39_percentage</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">topic_distribution</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+       
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">country_distribution</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df_indexid</span> <span class="o">=</span> <span class="n">country_distribution</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+            <span class="n">majority_country</span> <span class="o">=</span> <span class="n">df_indexid</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">country_distribution</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">majority_country</span> <span class="o">=</span> <span class="s1">&#39;NONE&#39;</span>
+        
+        <span class="n">jdc_tag_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag_distribution</span><span class="p">)</span>
+
+        
+        <span class="k">return</span> <span class="n">topic_distribution</span> <span class="p">,</span> <span class="n">country_distribution</span> <span class="p">,</span> <span class="n">tag_distribution</span> <span class="p">,</span> <span class="n">majority_country</span> <span class="p">,</span> <span class="n">topic_39_percentage</span><span class="p">,</span> <span class="n">jdc_tag_count</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>[ include a sample of text showing topic distribution ]</p>
 <p>We use the outputs from the NLP4Dev to calculate a “relevance” score for each dataset-paper compbination</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_relevance</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span><span class="n">dataset</span><span class="p">,</span> <span class="n">topic_39_percentage</span><span class="p">,</span> <span class="n">jdc_tag_count</span><span class="p">,</span><span class="n">majority_country</span><span class="p">,</span><span class="n">relevance_threshold</span><span class="p">,</span> <span class="n">paper_title</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="c1">#We should define ref as a global variable if the app will always be reading from that one file</span>
+    <span class="c1"># removed the paper titles argument because we are not using it anywhere in the function. Check with Mureji.</span>
+
+    <span class="n">dataset_country</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ref</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;nation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">dataset_title</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ref</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">dataset</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">topic_39_percentage</span> <span class="o">&gt;</span> <span class="n">relevance_threshold</span><span class="p">)</span><span class="ow">and</span> <span class="p">(</span><span class="n">majority_country</span> <span class="o">==</span> <span class="n">dataset_country</span><span class="p">)):</span>
+        <span class="n">relevance</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span><span class="p">((</span><span class="n">topic_39_percentage</span> <span class="o">&gt;</span> <span class="n">relevance_threshold</span><span class="p">)</span><span class="ow">and</span> <span class="p">(</span><span class="n">majority_country</span> <span class="o">!=</span> <span class="n">dataset_country</span><span class="p">)):</span>
+        <span class="n">relevance</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">relevance</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="n">final_output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="n">dataset_title</span><span class="p">],[</span><span class="n">relevance</span><span class="p">]</span>
+                    <span class="p">,[</span><span class="n">topic_39_percentage</span><span class="p">]</span>
+                    <span class="p">,[</span><span class="n">jdc_tag_count</span><span class="p">])),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Dataset Name&quot;</span><span class="p">,</span><span class="s2">&quot;Relevance&quot;</span><span class="p">,</span><span class="s2">&quot;topic 39 Percentage&quot;</span><span class="p">,</span> <span class="s2">&quot;JDC Tag Counts&quot;</span><span class="p">])</span>  
+    <span class="k">return</span> <span class="n">final_output</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The outputs of this relevance function are returned to users in our <span class="xref myst">user tool</span>.</p>
-<p><strong>“qx_qx_sample_streamlit_demo”</strong> and <strong>“qx_qx_demo_short”</strong> contain the following variables: <strong>title</strong>, <strong>abstract</strong>, <strong>dataset number</strong>, and <strong>query number</strong>.
-<strong>“qx_qx_sample_results”</strong> datasets contain the information we need to display in the app. It contains the following variables: <strong>dataset title</strong>, <strong>paper title</strong>, <strong>relevance</strong>, <strong>JDC tags</strong>, <strong>value</strong>, and <strong>topic percentages</strong>.</p>
 <section id="citations">
 <h2><span class="section-number">3.5.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id8" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="../proposed-solution%20copy.html#id7" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
+<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="#id9" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="#id8" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
 <div class="docutils container" id="id3">
 <dl class="citation">
 <dt class="label" id="id10"><span class="brackets">BK16</span></dt>

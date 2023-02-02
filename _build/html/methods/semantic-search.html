@@ -259,6 +259,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/methods/semantic-search.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -325,6 +354,23 @@ title="Open an issue"
   </button>
   <div class="menu-dropdown__content">
     <ul>
+      <li>
+        <a href="../_sources/methods/semantic-search.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
       <li>
         <a href="../_sources/methods/semantic-search.md"
    class="headerbtn"
@@ -427,6 +473,29 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="semantic-search">
 <h1><span class="section-number">3.4. </span>Semantic search<a class="headerlink" href="#semantic-search" title="Permalink to this headline">#</a></h1>
 <p>We made use of the <a class="reference external" href="https://www.semanticscholar.org/product/api">Semantic Scholar API</a>. For each of the query strings generated in the last section, we pass them to the <a class="reference external" href="https://api.semanticscholar.org/api-docs/graph#tag/Paper-Data">“Paper Lookup” API endpoint</a>, which we access through the <a class="reference external" href="https://github.com/danielnsilva/semanticscholar">SemanticScholar Python library</a> using the following call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sch</span> <span class="o">=</span> <span class="n">SemanticScholar</span><span class="p">()</span>
+<span class="n">query_type1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type1&quot;</span><span class="p">]:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">sch</span><span class="o">.</span><span class="n">search_paper</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">query_type1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sch</span> <span class="o">=</span> <span class="n">SemanticScholar</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">query_type1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dfq</span><span class="p">[</span><span class="s2">&quot;query_type1&quot;</span><span class="p">]:</span>
+
+<span class="ne">NameError</span>: name &#39;SemanticScholar&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>The output is an object which includes (among others) the following information:</p>
 <ul class="simple">
 <li><p>Dataset ID</p></li>
@@ -442,6 +511,23 @@ title="Print to PDF"
 <li><p>PDF availability (indicates whether the full PDF is included in the corpus, and whether the abstract, body, and bibliographic entries are available in parsedt format)</p></li>
 </ul>
 <p>We extract abstracts from this output, giving us an abstract for each dataset-query-paper combination where an abstract is available. The abstract, together with the indicator of PDF availability, serves as an input into our topic modeling procedure (see the next section.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">semantic_search</span><span class="p">(</span><span class="n">query</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; This function takes in a query (from the query_finder function) and returns a dataframe of abtracts and corpus IDS&quot;&quot;&quot;</span>
+    <span class="n">sch</span> <span class="o">=</span> <span class="n">SemanticScholar</span><span class="p">()</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">sch</span><span class="o">.</span><span class="n">search_paper</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    
+    <span class="c1">#metadata</span>
+    <span class="c1">### Add title</span>
+    <span class="n">abstracts</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">abstract</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+    <span class="n">identifiers</span> <span class="o">=</span>  <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">externalIds</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+    <span class="n">API_corpus_ID</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CorpusId&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">identifiers</span><span class="p">]</span> <span class="c1"># we can return whatever we want here.     </span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">abstracts</span><span class="p">,</span> <span class="n">API_corpus_ID</span><span class="p">)),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;abstract&#39;</span><span class="p">,</span> <span class="s1">&#39;corpus_id&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Where available, we also parse PDF content. When we parse a PDF, the output is an object which includes (among others) the following information:</p>
 <ul class="simple">
 <li><p>Paper ID</p></li>
@@ -452,7 +538,7 @@ title="Print to PDF"
 </ul>
 <section id="citations">
 <h2><span class="section-number">3.4.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
-<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id8" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="../proposed-solution%20copy.html#id7" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
+<p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="topic-modeling-and-sentiment-analysis.html#id9" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="topic-modeling-and-sentiment-analysis.html#id8" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
 <div class="docutils container" id="id3">
 <dl class="citation">
 <dt class="label" id="id10"><span class="brackets">BK16</span></dt>

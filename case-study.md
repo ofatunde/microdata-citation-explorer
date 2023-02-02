@@ -1,6 +1,6 @@
 # Case Study: VaSyR 2018
 
-We present an end-to-end example using a sample dataset.
+In this section, we present an end-to-end example using a sample dataset.
 
 ## Query generation
 

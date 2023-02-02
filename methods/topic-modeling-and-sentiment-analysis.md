@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Topic Modeling and Sentiment Analysis
 
 We imported the documents available in the Semantic Scholar and NPL4Dev corpuses.
@@ -26,7 +41,8 @@ We make use of the [NLP4Dev API] (https://www.nlp4dev.org/content-api). Dependin
 %    return dataframe, list([country_counts, country_details, country_groups, tag_counts])
 % ```
 
-We run the abstracts or PDF text from the **“query_typex_abs”** through the NLP4DEV API. We convert the response objects into three types of datasets: **“NLP4DEV_qx”**, **“topic_importance_querytypex”**, and **“nlpdev_queryx"**. **“NLP4DEV_qx”** datasets contain the metadata from the NLP4DEV API: 
+We run the abstracts or PDF text from the Semantic Scholar results through the NLP4DEV API, which returns the following information:
+%We convert the response objects into three types of datasets: **“NLP4DEV_qx”**, **“topic_importance_querytypex”**, and **“nlpdev_queryx"**. **“NLP4DEV_qx”** datasets contain the metadata from the NLP4DEV API: 
 * country counts
 * country group
 * JDC tags (a list of phrases defined by NLP4Dev as being related to forced displacement)
@@ -136,8 +152,8 @@ The outputs of this relevance function are returned to users in our [user tool](
 % We merge the semantic scholar metadata(**“query_typex_abs.csv”**) and the metadata (**“NLP4DEV_qx”**) files we get from running the abstracts through the NLP4DEV API. The datasets labeled **“ss_NLP4_queryx_merge”** and **“qx_ss_nlpdev_master”** are the results of different types or merges from the two metadata sources. If in doubt, use the **“qx_ss_nlpdev_master”** datasets.
 
 % **“qx_datasets”** contain the  datasets that returned queries from the NLP4DEV API for each query. This returns the datasets that do not have HTML tags. 
-**“qx_qx_sample_streamlit_demo”** and **"qx_qx_demo_short"** contain the following variables: **title**, **abstract**, **dataset number**, and **query number**.
-**“qx_qx_sample_results”** datasets contain the information we need to display in the app. It contains the following variables: **dataset title**, **paper title**, **relevance**, **JDC tags**, **value**, and **topic percentages**.
+%**“qx_qx_sample_streamlit_demo”** and **"qx_qx_demo_short"** contain the following variables: **title**, **abstract**, **dataset number**, and **query number**.
+%**“qx_qx_sample_results”** datasets contain the information we need to display in the app. It contains the following variables: **dataset title**, **paper title**, **relevance**, **JDC tags**, **value**, and **topic percentages**.
 
 ## Citations
 

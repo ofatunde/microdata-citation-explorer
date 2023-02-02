@@ -16,8 +16,7 @@ kernelspec:
 # Query Generation
 We begin by generating a set of search queries based on the metadata for each dataset.
 
-The full query creation notebook can be found at this link: 
-[1]: https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb "Query notebook"
+The full query creation notebook can be found [here](https://github.com/ofatunde/mdl-explorer-app/blob/main/notebooks/Semantic_Scholar_NLP4DEV.ipynb).
 
 We start with simple methods of combining the metadata. The key metadata components that we use as an input into queries are:
 * Core survey name
@@ -45,7 +44,7 @@ df = pd.read_csv("../data/semantic_scholar_query_results_with_web_count.csv")
 print(df)
 ```
 
-Each of these query strings is subsequently passed into the Semantic Scholar API. For example, the following function generates 
+Each of these query strings is subsequently passed into the Semantic Scholar API. The following function generates a single query which can serve as an argument into another function.
 
 ```{code-cell}
 # This function takes in the name of our dataframe, the id of the data set and the query number and returns the query.
