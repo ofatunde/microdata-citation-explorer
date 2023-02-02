@@ -20,7 +20,12 @@ chapters:
     - file: methods/semantic-search
     - file: methods/topic-modeling-and-sentiment-analysis
     - file: methods/network-analysis
+- file: results
+  sections:
+    - file: results/model-output
+    - file: results/evaluating-model-performance
 - file: implementation-options
+- file: case-study
 - file: contributors
 - file: bibliography
 - url: https://ofatunde-mdl-explorer-app-appmain-r0x5v9.streamlit.app/
