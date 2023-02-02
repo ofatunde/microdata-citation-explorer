@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.5. Topic Modeling and Sentiment Analysis &#8212; Microdata Citation Explorer project</title>
+    <title>3.8. Topic Modeling and Sentiment Analysis &#8212; Microdata Citation Explorer project</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.6. Network Analysis" href="network-analysis.html" />
-    <link rel="prev" title="3.4. Semantic search" href="semantic-search.html" />
+    <link rel="next" title="3.9. Network Analysis" href="network-analysis.html" />
+    <link rel="prev" title="3.7. Semantic search" href="semantic-search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -141,17 +141,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="semantic-search.html">
-     3.4. Semantic search
+     3.7. Semantic search
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.5. Topic Modeling and Sentiment Analysis
+     3.8. Topic Modeling and Sentiment Analysis
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="network-analysis.html">
-     3.6. Network Analysis
+     3.9. Network Analysis
     </a>
    </li>
   </ul>
@@ -387,7 +387,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.5.1. Citations
+   3.8.1. Citations
   </a>
  </li>
 </ul>
@@ -411,7 +411,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#citations">
-   3.5.1. Citations
+   3.8.1. Citations
   </a>
  </li>
 </ul>
@@ -425,7 +425,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="topic-modeling-and-sentiment-analysis">
-<h1><span class="section-number">3.5. </span>Topic Modeling and Sentiment Analysis<a class="headerlink" href="#topic-modeling-and-sentiment-analysis" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.8. </span>Topic Modeling and Sentiment Analysis<a class="headerlink" href="#topic-modeling-and-sentiment-analysis" title="Permalink to this headline">#</a></h1>
 <p>We make use of the NLP4Dev API.</p>
 <p>We run the abstracts from the <strong>“query_typex_abs”</strong> through the NLP4DEV API. We convert the response objects into three types of datasets: <strong>“NLP4DEV_qx”</strong>, <strong>“topic_importance_querytypex”</strong>, and <strong>“nlpdev_queryx”</strong>. <strong>“NLP4DEV_qx”</strong> datasets contain the metadata from the NLP4DEV API: country counts, country group, JDC tags, the tag counts, the dataset ID, Corpus ID, and the country that is mentioned the most.  “nlpdev_queryx datasets containing the raw data dump from the NLP4DEV API. Basically, “nlpdev_queryx is the raw version of NLP4DEV_qx. These datasets can be found in the NLP4DEV datasets folder on the cloud.</p>
 <p>“topic_importance_querytypex” datasets contain the topic importance. The default number of topics returned from the NLP4DEV API is 10.</p>
@@ -434,7 +434,7 @@ title="Print to PDF"
 <strong>“qx_qx_sample_streamlit_demo”</strong> and <strong>“qx_qx_demo_short”</strong> contain the following variables: <strong>title</strong>, <strong>abstract</strong>, <strong>dataset number</strong>, and <strong>query number</strong>.
 <strong>“qx_qx_sample_results”</strong> datasets contain the information we need to display in the app. It contains the following variables: <strong>dataset title</strong>, <strong>paper title</strong>, <strong>relevance</strong>, <strong>JDC tags</strong>, <strong>value</strong>, and <strong>topic percentages</strong>.</p>
 <section id="citations">
-<h2><span class="section-number">3.5.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.8.1. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id8" title="Ethan Fast, Binbin Chen, and Michael S. Bernstein. Empath: understanding topic signals in large-scale text. In Proceedings of the 2016 CHI Conference on Human Factors in Computing Systems. ACM, May 2016. URL: https://doi.org/10.1145/2858036.2858535, doi:10.1145/2858036.2858535.">FCB16</a>]</span>,<span id="id2">[<a class="reference internal" href="../proposed-solution%20copy.html#id7" title="Harr Chen and David R. Karger. Less is more: probabilistic models for retrieving fewer relevant documents. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval. ACM, August 2006. URL: https://doi.org/10.1145/1148170.1148245, doi:10.1145/1148170.1148245.">CK06</a>]</span>.</p>
 <div class="docutils container" id="id3">
 <dl class="citation">
@@ -498,13 +498,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3.4. </span>Semantic search</p>
+            <p class="prev-next-title"><span class="section-number">3.7. </span>Semantic search</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="network-analysis.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>Network Analysis</p>
+        <p class="prev-next-title"><span class="section-number">3.9. </span>Network Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

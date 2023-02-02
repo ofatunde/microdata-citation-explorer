@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.4. Semantic search" href="semantic-search.html" />
+    <link rel="next" title="3.7. Semantic search" href="semantic-search.html" />
     <link rel="prev" title="3. Methods" href="../methods.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -141,17 +141,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="semantic-search.html">
-     3.4. Semantic search
+     3.7. Semantic search
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="topic-modeling-and-sentiment-analysis.html">
-     3.5. Topic Modeling and Sentiment Analysis
+     3.8. Topic Modeling and Sentiment Analysis
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="network-analysis.html">
-     3.6. Network Analysis
+     3.9. Network Analysis
     </a>
    </li>
   </ul>
@@ -431,15 +431,37 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-steps">
-   3.3.1. Next steps
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.3. Query Generation
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   3.3.2. Citations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnt-c-users-ofatunde-dropbox-world-bank-jdc-fellowship-project-work-microdata-library-documentation-wiki-microdata-citation-explorer-public-microdata-citation-explorer-data-semantic-scholar-query-results-with-web-count-csv">
+   3.4. /mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-semantic-scholar-query-results-with-web-count-csv">
+   3.5. data/semantic_scholar_query_results_with_web_count.csv
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#semantic-scholar-query-results-with-web-count-csv">
+   3.6. semantic_scholar_query_results_with_web_count.csv
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-steps">
+     3.6.1. Next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citations">
+     3.6.2. Citations
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -460,15 +482,37 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#next-steps">
-   3.3.1. Next steps
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   3.3. Query Generation
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#citations">
-   3.3.2. Citations
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mnt-c-users-ofatunde-dropbox-world-bank-jdc-fellowship-project-work-microdata-library-documentation-wiki-microdata-citation-explorer-public-microdata-citation-explorer-data-semantic-scholar-query-results-with-web-count-csv">
+   3.4. /mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv
   </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-semantic-scholar-query-results-with-web-count-csv">
+   3.5. data/semantic_scholar_query_results_with_web_count.csv
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#semantic-scholar-query-results-with-web-count-csv">
+   3.6. semantic_scholar_query_results_with_web_count.csv
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-steps">
+     3.6.1. Next steps
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#citations">
+     3.6.2. Citations
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -507,7 +551,7 @@ title="Print to PDF"
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;./data/semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -517,7 +561,7 @@ title="Print to PDF"
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;./data/semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;semantic_scholar_query_results_with_web_count.csv&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="nn">File ~/.local/lib/python3.10/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
@@ -589,19 +633,26 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
 <span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./data/semantic_scholar_query_results_with_web_count.csv&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;semantic_scholar_query_results_with_web_count.csv&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>/mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv
-data/semantic_scholar_query_results_with_web_count.csv</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mnt-c-users-ofatunde-dropbox-world-bank-jdc-fellowship-project-work-microdata-library-documentation-wiki-microdata-citation-explorer-public-microdata-citation-explorer-data-semantic-scholar-query-results-with-web-count-csv">
+<h1><span class="section-number">3.4. </span>/mnt/c/Users/ofatunde/Dropbox/World Bank JDC Fellowship/Project work/Microdata library/Documentation wiki/microdata-citation-explorer-public/microdata-citation-explorer/data/semantic_scholar_query_results_with_web_count.csv<a class="headerlink" href="#mnt-c-users-ofatunde-dropbox-world-bank-jdc-fellowship-project-work-microdata-library-documentation-wiki-microdata-citation-explorer-public-microdata-citation-explorer-data-semantic-scholar-query-results-with-web-count-csv" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-semantic-scholar-query-results-with-web-count-csv">
+<h1><span class="section-number">3.5. </span>data/semantic_scholar_query_results_with_web_count.csv<a class="headerlink" href="#data-semantic-scholar-query-results-with-web-count-csv" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="semantic-scholar-query-results-with-web-count-csv">
+<h1><span class="section-number">3.6. </span>semantic_scholar_query_results_with_web_count.csv<a class="headerlink" href="#semantic-scholar-query-results-with-web-count-csv" title="Permalink to this headline">#</a></h1>
 <section id="next-steps">
-<h2><span class="section-number">3.3.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6.1. </span>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
 <p>After generating these queries, we run the queries we created from the raw file (“overview_all_datasets_2022_categorized.xlsx”) through the semantic scholar API. See <span class="xref myst">the next section</span> for more details.</p>
 </section>
 <section id="citations">
-<h2><span class="section-number">3.3.2. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6.2. </span>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">#</a></h2>
 <p>The following papers informed our approach: <span id="id1">[<a class="reference internal" href="../proposed-solution%20copy.html#id9" title="Eirik Bakke and David R. Karger. Expressive query construction through direct manipulation of nested relational results. In Proceedings of the 2016 International Conference on Management of Data. ACM, June 2016. URL: https://doi.org/10.1145/2882903.2915210, doi:10.1145/2882903.2915210.">BK16</a>]</span>.</p>
 <div class="docutils container" id="id2">
 <dl class="citation">
@@ -671,7 +722,7 @@ data/semantic_scholar_query_results_with_web_count.csv</p>
     <a class='right-next' id="next-link" href="semantic-search.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.4. </span>Semantic search</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Semantic search</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
