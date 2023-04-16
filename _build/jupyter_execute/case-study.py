@@ -32,9 +32,16 @@ print(df[df["id"] == 189])
 # In[2]:
 
 
-#df  = pd.read_csv("data/dataset189_query1.csv")
-#glue("df_tbl", df)
+df  = pd.read_csv("data/dataset189_query1.csv")
+glue("df_tbl", df)
 
+
+# In[ ]:
+
+
+import observable_jupyter_widget
+import ipywidgets as widgets
+from pprint import pprint
 w = observable_jupyter_widget.ObservableWidget(
     '@microdata-citation-explorer/query-generation',
     cells=['viewof table','typed_entry'], # optional

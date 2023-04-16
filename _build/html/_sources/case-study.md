@@ -38,9 +38,14 @@ print(df[df["id"] == 189])
 For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
 
 ```{code-cell} ipython3
-#df  = pd.read_csv("data/dataset189_query1.csv")
-#glue("df_tbl", df)
+df  = pd.read_csv("data/dataset189_query1.csv")
+glue("df_tbl", df)
+```
 
+```{code-cell} ipython3
+import observable_jupyter_widget
+import ipywidgets as widgets
+from pprint import pprint
 w = observable_jupyter_widget.ObservableWidget(
     '@microdata-citation-explorer/query-generation',
     cells=['viewof table','typed_entry'], # optional

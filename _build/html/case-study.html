@@ -587,9 +587,28 @@ title="Print to PDF"
 <p>For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df  = pd.read_csv(&quot;data/dataset189_query1.csv&quot;)</span>
-<span class="c1">#glue(&quot;df_tbl&quot;, df)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/dataset189_query1.csv&quot;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/dataset189_query1.csv&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
 
+<span class="ne">NameError</span>: name &#39;glue&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">observable_jupyter_widget</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 <span class="n">w</span> <span class="o">=</span> <span class="n">observable_jupyter_widget</span><span class="o">.</span><span class="n">ObservableWidget</span><span class="p">(</span>
     <span class="s1">&#39;@microdata-citation-explorer/query-generation&#39;</span><span class="p">,</span>
     <span class="n">cells</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viewof table&#39;</span><span class="p">,</span><span class="s1">&#39;typed_entry&#39;</span><span class="p">],</span> <span class="c1"># optional</span>
@@ -597,24 +616,6 @@ title="Print to PDF"
     <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viewof table&#39;</span><span class="p">,</span><span class="s1">&#39;typed_entry&#39;</span><span class="p">]</span>  <span class="c1"># optional</span>
 <span class="p">)</span>
 <span class="n">w</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#df  = pd.read_csv(&quot;data/dataset189_query1.csv&quot;)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#glue(&quot;df_tbl&quot;, df)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">w</span> <span class="o">=</span> <span class="n">observable_jupyter_widget</span><span class="o">.</span><span class="n">ObservableWidget</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;@microdata-citation-explorer/query-generation&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">cells</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viewof table&#39;</span><span class="p">,</span><span class="s1">&#39;typed_entry&#39;</span><span class="p">],</span> <span class="c1"># optional</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;typed_entry&#39;</span><span class="p">:</span> <span class="mi">189</span><span class="p">},</span>  <span class="c1"># optional</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;viewof table&#39;</span><span class="p">,</span><span class="s1">&#39;typed_entry&#39;</span><span class="p">]</span>  <span class="c1"># optional</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">w</span>
-
-<span class="ne">NameError</span>: name &#39;observable_jupyter_widget&#39; is not defined
 </pre></div>
 </div>
 </div>
