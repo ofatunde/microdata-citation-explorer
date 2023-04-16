@@ -22,18 +22,26 @@
 
 
 import pandas as pd
-df = pd.read_csv("../data/semantic_scholar_query_results_with_web_count.csv")
+df = pd.read_csv("data/semantic_scholar_query_results_with_web_count.csv")
 print(df[df["id"] == 189])
 
 
 # ## Semantic Search
 # For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
 
-# In[ ]:
+# In[2]:
 
 
-df  = pd.read_csv("data/dataset189_query1.csv")
-glue("df_tbl", df)
+#df  = pd.read_csv("data/dataset189_query1.csv")
+#glue("df_tbl", df)
+
+w = observable_jupyter_widget.ObservableWidget(
+    '@microdata-citation-explorer/query-generation',
+    cells=['viewof table','typed_entry'], # optional
+    inputs={'typed_entry': 189},  # optional
+    outputs=['viewof table','typed_entry']  # optional
+)
+w
 
 
 # ## Topic Modeling
