@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Case Study: VaSyR 2018
 
-In this section, we present an end-to-end example using a sample dataset.
+In this section, we present an end-to-end example using a sample dataset. Information about the dataset can be found on [this page](https://microdata.unhcr.org/index.php/catalog/189).
 
 ## Query generation
 
-Each of the six queries returned X potentially relevant papers.
+For the sample dataset, the six query formulations returned between one and 18 potentially relevant papers.
 
 |  	| **Query String** 	| **Number of results** | 
 |---	|:---:	|:---:	|
@@ -26,11 +38,10 @@ print(df[df["id"] == 189])
 For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
 
 ```{code-cell} ipython3
-:tags: ["output_scroll","hide-input"]
-import pandas as pd
-df = pd.read_csv("../data/semantic_scholar_query_results_with_web_count.csv")
-print(df[df["id"] == 189])
+df  = pd.read_csv("data/dataset189_query1.csv")
+glue("df_tbl", df)
 ```
+
 
 ## Topic Modeling
 Out of the XX papers returned across the six query types, YYY had abstracts available in either the NLP4Dev or Semantic Scholar corpuses, and ZZZ had full body text available.
