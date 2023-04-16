@@ -6,6 +6,15 @@ In this section, we present an end-to-end example using a sample dataset.
 
 Each of the six queries returned X potentially relevant papers.
 
+|  	| **Query String** 	| **Number of results** | 
+|---	|:---:	|:---:	|
+| 1 	| 'UNHCR Lebanon 2018 VASYR'	| 18	|
+| 2 	| 'UNHCR Lebanon 2018 Vulnerability Assessment of Syrian 0Refugees (VASYR)' | 5 |
+| 3 	| 'UNHCR Lebanon 2018 VASYR Vulnerability Assessment of Syrian efugees (VASYR)'	| 2	|
+| 4 	| 'UNHCR, WFP, UNICEF Lebanon 2018 VASYR'	| 6	|
+| 5 	| 'UNHCR, WFP, UNICEF Lebanon 2018 Vulnerability Assessment of Syrian Refugees (VASYR)' | 2 |
+| 6 	| 'UNHCR, WFP, UNICEF Lebanon 2018 VASYR Vulnerability Assessment of Syrian Refugees (VASYR)' 	|1	|
+
 ```{code-cell} ipython3
 :tags: ["output_scroll","hide-input"]
 import pandas as pd
@@ -14,7 +23,7 @@ print(df[df["id"] == 189])
 ```
 
 ## Semantic Search
-Each of the six queries returned X potentially relevant papers.
+For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
 
 ```{code-cell} ipython3
 :tags: ["output_scroll","hide-input"]
