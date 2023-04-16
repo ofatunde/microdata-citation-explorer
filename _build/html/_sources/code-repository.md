@@ -1,3 +1,0 @@
-# Code repository
-
-Test text
