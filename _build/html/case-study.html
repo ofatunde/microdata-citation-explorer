@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="7. Contributors" href="contributors.html" />
@@ -587,24 +589,263 @@ title="Print to PDF"
 <p>For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glueviz</span> <span class="kn">import</span> <span class="n">glue</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from glueviz import glue</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
 <span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/dataset189_query1.csv&quot;</span><span class="p">)</span>
 <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">glueviz</span> <span class="kn">import</span> <span class="n">glue</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/dataset189_query1.csv&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;glueviz&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>corpus_ID</th>
+      <th>dataset_id</th>
+      <th>title</th>
+      <th>abstract</th>
+      <th>authors</th>
+      <th>DOI</th>
+      <th>years</th>
+      <th>journal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>195504488</td>
+      <td>189</td>
+      <td>Dignity and displaced Syrians in Lebanon. ‘The...</td>
+      <td>Since the popular uprising and subsequent war ...</td>
+      <td>[{'authorId': '7702531', 'name': 'Francesca Gr...</td>
+      <td>NaN</td>
+      <td>2018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>211116634</td>
+      <td>189</td>
+      <td>Resettled Syrian Refugees in Oxford</td>
+      <td>This policy brief presents preliminary finding...</td>
+      <td>[]</td>
+      <td>10.1163/2210-7975_hrd-3181-20180005</td>
+      <td>2018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>188442469</td>
+      <td>189</td>
+      <td>Educate, Empower, Employ</td>
+      <td>Since the start of the Syrian Civil War in 201...</td>
+      <td>[{'authorId': '71465164', 'name': 'Daniel Bern...</td>
+      <td>NaN</td>
+      <td>2018</td>
+      <td>Journal of International Relations</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>203291058</td>
+      <td>189</td>
+      <td>From security to resilience: New vistas for in...</td>
+      <td>International institutions and organizations l...</td>
+      <td>[{'authorId': '83370432', 'name': 'R. Anholt'}...</td>
+      <td>10.5075/EPFL-IRGC-262527</td>
+      <td>2018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>211103442</td>
+      <td>189</td>
+      <td>MENA PS RESEARCH PROJECT PROTECTION IMPACTS OF...</td>
+      <td>UNHCR has been promoting research projects aim...</td>
+      <td>[]</td>
+      <td>NaN</td>
+      <td>2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>254071595</td>
+      <td>189</td>
+      <td>Using Facebook advertising data to describe th...</td>
+      <td>While the fighting in the Syrian civil war has...</td>
+      <td>[{'authorId': '72339731', 'name': 'M. Fatehkia...</td>
+      <td>10.3389/fdata.2022.1033530</td>
+      <td>2022</td>
+      <td>Frontiers in Big Data</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>235475057</td>
+      <td>189</td>
+      <td>Multi-purpose cash transfers and health among ...</td>
+      <td>NaN</td>
+      <td>[{'authorId': '3751306', 'name': 'E. Lyles'}, ...</td>
+      <td>10.1186/s12889-021-11196-8</td>
+      <td>2021</td>
+      <td>BMC Public Health</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>244240562</td>
+      <td>189</td>
+      <td>Sudanese Refugees and the “Syrian Refugee Resp...</td>
+      <td>\n By focusing on Sudanese refugees and asylum...</td>
+      <td>[{'authorId': '74726527', 'name': 'Maja Janmyr'}]</td>
+      <td>10.1093/rsq/hdab012</td>
+      <td>2021</td>
+      <td>Refugee Survey Quarterly</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>250652270</td>
+      <td>189</td>
+      <td>Syrian Refugees In Lebanon: “New Community” In...</td>
+      <td>The paper analyzes the Syrian refugee crisis i...</td>
+      <td>[{'authorId': '9899978', 'name': 'L. Harutyuny...</td>
+      <td>10.52837/2579-2970-2022.11.1-5</td>
+      <td>2022</td>
+      <td>BULLETIN OF THE INSTITUTE OF ORIENTAL STUDIES</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>148645104</td>
+      <td>189</td>
+      <td>No Country of Asylum: ‘Legitimizing’ Lebanon’s...</td>
+      <td>How do States ‘legitimize’ their non-ratificat...</td>
+      <td>[{'authorId': '74726527', 'name': 'Maja Janmyr'}]</td>
+      <td>10.1093/IJRL/EEX026</td>
+      <td>2017</td>
+      <td>International Journal of Refugee Law</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>251867363</td>
+      <td>189</td>
+      <td>Vulnerable Permanency in Mass Inﬂ ux The Case ...</td>
+      <td>Periods of civil war and political turmoil fre...</td>
+      <td>[{'authorId': '11746336', 'name': 'A. Içduygu'...</td>
+      <td>NaN</td>
+      <td>2022</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>218461991</td>
+      <td>189</td>
+      <td>Voter Turnout and Vote Buying in the 2018 Parl...</td>
+      <td>About the authors Jana Mourad is an economic r...</td>
+      <td>[{'authorId': '113786266', 'name': 'Jana Moura...</td>
+      <td>NaN</td>
+      <td>2019</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>210507352</td>
+      <td>189</td>
+      <td>“Seeking a Widow with Orphaned Children”: Unde...</td>
+      <td>Egypt currently hosts more than 200 thousand r...</td>
+      <td>[{'authorId': '118698087', 'name': 'Dina M. Ta...</td>
+      <td>10.1163/9789004417342_006</td>
+      <td>2019</td>
+      <td>Migration and Islamic Ethics</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>219862610</td>
+      <td>189</td>
+      <td>Análisis derecho de asilo: Colombia</td>
+      <td>The disproportionate increase in the number of...</td>
+      <td>[{'authorId': '1753410112', 'name': 'John Jair...</td>
+      <td>NaN</td>
+      <td>2019</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>229389406</td>
+      <td>189</td>
+      <td>Sýrlenskir nemendur í íslenskum grunnskólum: U...</td>
+      <td>In 2016 Iceland, in cooperation with the Unite...</td>
+      <td>[{'authorId': '2085056370', 'name': 'Hermína G...</td>
+      <td>10.24270/netla.2020.8</td>
+      <td>2020</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>234286484</td>
+      <td>189</td>
+      <td>Photovoice for Health Promotion Research, Empo...</td>
+      <td>NaN</td>
+      <td>[{'authorId': '5776785', 'name': 'O. Caman'}]</td>
+      <td>10.1007/978-3-030-56417-9_10</td>
+      <td>2021</td>
+      <td>Arts and Health Promotion</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>219736080</td>
+      <td>189</td>
+      <td>The Borders around Us: Forced Migration and th...</td>
+      <td>Over the last decades, the global flow of inte...</td>
+      <td>[{'authorId': '36986788', 'name': 'Van C. Tran'}]</td>
+      <td>10.1111/cico.12498</td>
+      <td>2020</td>
+      <td>City &amp; Community</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>253124810</td>
+      <td>189</td>
+      <td>Forced Displacement Literature Review</td>
+      <td>Between August and October 2017 close to 700,0...</td>
+      <td>[{'authorId': '2140164897', 'name': 'A. Alam'}...</td>
+      <td>NaN</td>
+      <td>2020</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -621,6 +862,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "222e87836f864770a23ec4cba82cebd4"}
+</script></div>
 </div>
 </section>
 <section id="topic-modeling">
@@ -643,6 +888,12 @@ title="Print to PDF"
 <p>Of the papers that referenced this dataset, XYZ came from ABC geographies and ABC instutions.</p>
 </section>
 </section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"08e5bdfb29f64ab2a6d6da98362ad839": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "222e87836f864770a23ec4cba82cebd4": {"model_name": "ObservableWidgetModel", "model_module": "observable-jupyter-widget", "model_module_version": "^0.1.8", "state": {"_dom_classes": [], "_model_module": "observable-jupyter-widget", "_model_module_version": "^0.1.8", "_model_name": "ObservableWidgetModel", "_view_count": null, "_view_module": "observable-jupyter-widget", "_view_module_version": "^0.1.8", "_view_name": "ObservableWidgetView", "cells": ["viewof table", "typed_entry"], "inputs": {"typed_entry": 189}, "layout": "IPY_MODEL_08e5bdfb29f64ab2a6d6da98362ad839", "outputs": ["viewof table", "typed_entry"], "slug": "@microdata-citation-explorer/query-generation", "value": null}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
     <script type="text/x-thebe-config">
     {

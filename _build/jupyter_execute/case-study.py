@@ -32,12 +32,13 @@ print(df[df["id"] == 189])
 # In[2]:
 
 
-from glueviz import glue
+#from glueviz import glue
+from myst_nb import glue
 df  = pd.read_csv("data/dataset189_query1.csv")
 glue("df_tbl", df)
 
 
-# In[ ]:
+# In[3]:
 
 
 import observable_jupyter_widget
