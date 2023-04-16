@@ -38,6 +38,7 @@ print(df[df["id"] == 189])
 For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
 
 ```{code-cell} ipython3
+from glueviz import glue
 df  = pd.read_csv("data/dataset189_query1.csv")
 glue("df_tbl", df)
 ```

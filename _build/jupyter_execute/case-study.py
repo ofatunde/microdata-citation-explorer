@@ -32,6 +32,7 @@ print(df[df["id"] == 189])
 # In[2]:
 
 
+from glueviz import glue
 df  = pd.read_csv("data/dataset189_query1.csv")
 glue("df_tbl", df)
 
