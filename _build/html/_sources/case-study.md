@@ -35,9 +35,10 @@ print(df[df["id"] == 189])
 ```
 
 ## Semantic Search
-For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers
+For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers:
 
 ```{code-cell} ipython3
+:tags: ["output_scroll","hide-input"]
 #from glueviz import glue
 from myst_nb import glue
 df  = pd.read_csv("data/dataset189_query1.csv")
@@ -45,6 +46,7 @@ glue("df_tbl", df)
 ```
 
 ```{code-cell} ipython3
+:tags: ["output_scroll","hide-input"]
 import observable_jupyter_widget
 import ipywidgets as widgets
 from pprint import pprint
@@ -63,15 +65,23 @@ Out of the XX papers returned across the six query types, YYY had abstracts avai
 
 These were used as inputs to the NLP4Dev API, as described in [Section 3.5](methods/topic-modeling-and-sentiment-analysis.md).
 
-XXX were defined as relevant.
+9 were defined as relevant.
+
+```{code-cell} ipython3
+:tags: ["output_scroll","hide-input"]
+#from glueviz import glue
+from myst_nb import glue
+df  = pd.read_csv("data/sample_results.csv")
+glue("df_tbl", df)
+```
 
 ## Model Output
-Following manual review of the papers identified automatically, XXX were confirmed as relevant. Of these XXX, YYY had previously been identified through the manual procedure, and ZZZ were new.
+Following manual review of the papers identified automatically, 7 were confirmed as relevant. Of these, YYY had previously been identified through the manual procedure, and ZZZ were new.
 
 This represents a XXX percent improvement over the baseline.
 
 ## Evaluating Model Performance
-Based on our selected evaluation metric, Query X performed most effectively
+Based on our selected evaluation metric, Query X performed most effectively.
 
 ## Network analysis
 Of the papers that referenced this dataset, XYZ came from ABC geographies and ABC instutions.

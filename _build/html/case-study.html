@@ -586,8 +586,8 @@ title="Print to PDF"
 </section>
 <section id="semantic-search">
 <h2><span class="section-number">6.2. </span>Semantic Search<a class="headerlink" href="#semantic-search" title="Permalink to this headline">#</a></h2>
-<p>For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers</p>
-<div class="cell docutils container">
+<p>For query 1, below is the output returned from Semantic Scholar for 18 potentially relevant papers:</p>
+<div class="cell tag_output_scroll tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from glueviz import glue</span>
 <span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
@@ -847,7 +847,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">observable_jupyter_widget</span>
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
@@ -864,7 +864,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "11bc32a9ca3f4a808b290441e65671a6"}
+{"version_major": 2, "version_minor": 0, "model_id": "42fe48070b72484eb1e5cd6e4e5230e9"}
 </script></div>
 </div>
 </section>
@@ -872,16 +872,120 @@ title="Print to PDF"
 <h2><span class="section-number">6.3. </span>Topic Modeling<a class="headerlink" href="#topic-modeling" title="Permalink to this headline">#</a></h2>
 <p>Out of the XX papers returned across the six query types, YYY had abstracts available in either the NLP4Dev or Semantic Scholar corpuses, and ZZZ had full body text available.</p>
 <p>These were used as inputs to the NLP4Dev API, as described in <a class="reference internal" href="methods/topic-modeling-and-sentiment-analysis.html"><span class="doc std std-doc">Section 3.5</span></a>.</p>
-<p>XXX were defined as relevant.</p>
+<p>9 were defined as relevant.</p>
+<div class="cell tag_output_scroll tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#from glueviz import glue</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="n">df</span>  <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/sample_results.csv&quot;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;df_tbl&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Dataset Title</th>
+      <th>Paper Title</th>
+      <th>Relevance</th>
+      <th>Topic 39 Percentage</th>
+      <th>JDC Tags Mentioned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Dignity and displaced Syrians in Lebanon. ‘The...</td>
+      <td>1.0</td>
+      <td>54%</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Resettled Syrian Refugees in Oxford</td>
+      <td>0.5</td>
+      <td>49%</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Educate, Empower, Employ</td>
+      <td>1.0</td>
+      <td>29%</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Sudanese Refugees and the “Syrian Refugee Resp...</td>
+      <td>1.0</td>
+      <td>52%</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Syrian Refugees In Lebanon: “New Community” In...</td>
+      <td>1.0</td>
+      <td>43%</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>No Country of Asylum: ‘Legitimizing’ Lebanon’s...</td>
+      <td>1.0</td>
+      <td>39%</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Vulnerable Permanency in Mass Inﬂ ux The Case ...</td>
+      <td>0.5</td>
+      <td>49%</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Vulnerability Assessment of Syrian Refugees in...</td>
+      <td>Análisis derecho de asilo: Colombia</td>
+      <td>0.5</td>
+      <td>39%</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="model-output">
 <h2><span class="section-number">6.4. </span>Model Output<a class="headerlink" href="#model-output" title="Permalink to this headline">#</a></h2>
-<p>Following manual review of the papers identified automatically, XXX were confirmed as relevant. Of these XXX, YYY had previously been identified through the manual procedure, and ZZZ were new.</p>
+<p>Following manual review of the papers identified automatically, 7 were confirmed as relevant. Of these, YYY had previously been identified through the manual procedure, and ZZZ were new.</p>
 <p>This represents a XXX percent improvement over the baseline.</p>
 </section>
 <section id="evaluating-model-performance">
 <h2><span class="section-number">6.5. </span>Evaluating Model Performance<a class="headerlink" href="#evaluating-model-performance" title="Permalink to this headline">#</a></h2>
-<p>Based on our selected evaluation metric, Query X performed most effectively</p>
+<p>Based on our selected evaluation metric, Query X performed most effectively.</p>
 </section>
 <section id="network-analysis">
 <h2><span class="section-number">6.6. </span>Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this headline">#</a></h2>
@@ -891,7 +995,7 @@ title="Print to PDF"
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"240b92eeb9c14195a704ca53dfa1bfde": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "11bc32a9ca3f4a808b290441e65671a6": {"model_name": "ObservableWidgetModel", "model_module": "observable-jupyter-widget", "model_module_version": "^0.1.8", "state": {"_dom_classes": [], "_model_module": "observable-jupyter-widget", "_model_module_version": "^0.1.8", "_model_name": "ObservableWidgetModel", "_view_count": null, "_view_module": "observable-jupyter-widget", "_view_module_version": "^0.1.8", "_view_name": "ObservableWidgetView", "cells": ["viewof table", "typed_entry"], "inputs": {"typed_entry": 189}, "layout": "IPY_MODEL_240b92eeb9c14195a704ca53dfa1bfde", "outputs": ["viewof table", "typed_entry"], "slug": "@microdata-citation-explorer/query-generation", "value": null}}}, "version_major": 2, "version_minor": 0}
+{"state": {"3f01ee88cd804257bda926a1c69db72f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "42fe48070b72484eb1e5cd6e4e5230e9": {"model_name": "ObservableWidgetModel", "model_module": "observable-jupyter-widget", "model_module_version": "^0.1.8", "state": {"_dom_classes": [], "_model_module": "observable-jupyter-widget", "_model_module_version": "^0.1.8", "_model_name": "ObservableWidgetModel", "_view_count": null, "_view_module": "observable-jupyter-widget", "_view_module_version": "^0.1.8", "_view_name": "ObservableWidgetView", "cells": ["viewof table", "typed_entry"], "inputs": {"typed_entry": 189}, "layout": "IPY_MODEL_3f01ee88cd804257bda926a1c69db72f", "outputs": ["viewof table", "typed_entry"], "slug": "@microdata-citation-explorer/query-generation", "value": null}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
