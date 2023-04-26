@@ -2,6 +2,8 @@
 # coding: utf-8
 
 # # Dataset selection
+# 
+# First, filter by the following inputs in order to generate a set of datasets to choose from:
 
 # In[1]:
 

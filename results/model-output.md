@@ -12,8 +12,9 @@ kernelspec:
 
 # Dataset selection
 
+First, filter by the following inputs in order to generate a set of datasets to choose from:
 ```{code-cell} ipython3
-:tags: ["output_scroll","hide-input"]
+:tags: ["hide-input"]
 #from glueviz import glue
 from myst_nb import glue
 import pandas as pd
