@@ -16,6 +16,7 @@ kernelspec:
 :tags: ["output_scroll","hide-input"]
 #from glueviz import glue
 from myst_nb import glue
+import pandas as pd
 import ipywidgets as widgets
 from IPython.display import display
 
