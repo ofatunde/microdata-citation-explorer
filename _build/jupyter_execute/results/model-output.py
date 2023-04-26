@@ -12,7 +12,7 @@ import pandas as pd
 import ipywidgets as widgets
 from IPython.display import display
 
-latest_data_with_categories = pd.read.csv("data/latest_data_with_categories.csv")
+latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv")
 
 repository_list = latest_data_with_categories['repo_title'].unique().tolist()
 category_list = latest_data_with_categories['Category'].unique().tolist()
