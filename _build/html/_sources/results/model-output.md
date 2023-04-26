@@ -19,6 +19,15 @@ from myst_nb import glue
 import ipywidgets as widgets
 from IPython.display import display
 
+latest_data_with_categories = pd.read.csv("data/latest_data_with_categories.csv")
+
+repository_list = latest_data_with_categories['repo_title'].unique().tolist()
+category_list = latest_data_with_categories['Category'].unique().tolist()
+country_list = latest_data_with_categories['nation'].unique().tolist()
+year_list = latest_data_with_categories['year_end'].unique().tolist()
+dataset_list = latest_data_with_categories['title'].unique().tolist()
+query_type = ['1', '2', '3','4','5','6']
+
 repo_dropdown = widgets.Dropdown(
     options=repository_list,
     value='Europe',

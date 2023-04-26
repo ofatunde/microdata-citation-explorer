@@ -489,6 +489,15 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
 
+<span class="n">latest_data_with_categories</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;data/latest_data_with_categories.csv&quot;</span><span class="p">)</span>
+
+<span class="n">repository_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;repo_title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">category_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">country_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;nation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">year_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;year_end&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">dataset_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">query_type</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">]</span>
+
 <span class="n">repo_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
     <span class="n">options</span><span class="o">=</span><span class="n">repository_list</span><span class="p">,</span>
     <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span>
@@ -530,29 +539,14 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">repo_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">options</span><span class="o">=</span><span class="n">repository_list</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Repository:&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">category_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">options</span><span class="o">=</span><span class="n">category_list</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">value</span><span class="o">=</span><span class="s1">&#39;KAP WASH Survey&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Survey Category:&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">country_dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">options</span><span class="o">=</span><span class="n">country_list</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Lebanon&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Survey Country:&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">latest_data_with_categories</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;data/latest_data_with_categories.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">repository_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;repo_title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">category_list</span> <span class="o">=</span> <span class="n">latest_data_with_categories</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-<span class="ne">NameError</span>: name &#39;repository_list&#39; is not defined
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
 </pre></div>
 </div>
 </div>
