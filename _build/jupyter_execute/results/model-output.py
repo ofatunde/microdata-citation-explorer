@@ -1,19 +1,11 @@
----
-jupytext:
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
+#!/usr/bin/env python
+# coding: utf-8
 
-# Dataset selection
+# # Dataset selection
 
-```{code-cell} ipython3
-:tags: ["output_scroll","hide-input"]
+# In[1]:
+
+
 #from glueviz import glue
 from myst_nb import glue
 import ipywidgets as widgets
@@ -54,16 +46,14 @@ display(repo_dropdown)
 display(country_dropdown)
 display(category_dropdown)
 display(year_dropdown)
-```
-
-# Model output
-Each model returns a list of papers with the following information:
-
-* Dataset Title
-* Paper Title
-* Binary relevance
-* Continunous relevance score
-* Number of JDC tags mentioned
-* Percentage of paper dedicated to forced displacement
 
 
+# # Model output
+# Each model returns a list of papers with the following information:
+# 
+# * Dataset Title
+# * Paper Title
+# * Binary relevance
+# * Continunous relevance score
+# * Number of JDC tags mentioned
+# * Percentage of paper dedicated to forced displacement
