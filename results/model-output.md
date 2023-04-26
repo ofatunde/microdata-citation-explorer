@@ -20,8 +20,18 @@ from myst_nb import glue
 import pandas as pd
 import ipywidgets as widgets
 from IPython.display import display
+import requests
+url = "https://microdata.unhcr.org/index.php/api/catalog/search?ps=2000&sort_by=created&sort_order=desc"
+headers = {'Content-type': 'application/html',
+           'Accept': 'application/json'
+           }
+r = requests.get(url, verify=False, headers = headers,stream=True)
+json = r.json()
+latest_data = pd.DataFrame(json['result']['rows'])
+dataset_category_mapping = pd.read_csv("dataset_category_mapping.csv",encoding = "latin")
+latest_data_with_categories = pd.merge(latest_data,dataset_category_mapping,how = "left",on = 'title')
 
-latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv")
+#latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv")
 
 repository_list = latest_data_with_categories['repo_title'].unique().tolist()
 category_list = latest_data_with_categories['Category'].unique().tolist()
