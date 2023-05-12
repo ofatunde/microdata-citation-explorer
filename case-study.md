@@ -41,7 +41,7 @@ For query 1, below is the output returned from Semantic Scholar for 18 potential
 :tags: ["output_scroll","hide-input"]
 #from glueviz import glue
 from myst_nb import glue
-df  = pd.read_csv("data/dataset189_query1.csv")
+df  = pd.read_csv("data/dataset189_query1.csv",encoding = "latin")
 glue("df_tbl", df)
 ```
 
@@ -71,7 +71,7 @@ These were used as inputs to the NLP4Dev API, as described in [Section 3.5](meth
 :tags: ["output_scroll","hide-input"]
 #from glueviz import glue
 from myst_nb import glue
-df  = pd.read_csv("data/sample_results.csv")
+df  = pd.read_csv("data/sample_results.csv",encoding = "latin")
 glue("df_tbl", df)
 ```
 

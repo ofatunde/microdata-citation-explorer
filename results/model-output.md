@@ -21,17 +21,17 @@ import pandas as pd
 import ipywidgets as widgets
 from IPython.display import display
 import requests
-url = "https://microdata.unhcr.org/index.php/api/catalog/search?ps=2000&sort_by=created&sort_order=desc"
-headers = {'Content-type': 'application/html',
+#url = "https://microdata.unhcr.org/index.php/api/catalog/search?ps=2000&sort_by=created&sort_order=desc"
+#headers = {'Content-type': 'application/html',
            'Accept': 'application/json'
            }
-r = requests.get(url, verify=False, headers = headers,stream=True)
-json = r.json()
-latest_data = pd.DataFrame(json['result']['rows'])
-dataset_category_mapping = pd.read_csv("dataset_category_mapping.csv",encoding = "latin")
-latest_data_with_categories = pd.merge(latest_data,dataset_category_mapping,how = "left",on = 'title')
+#r = requests.get(url, verify=False, headers = headers,stream=True)
+#json = r.json()
+#latest_data = pd.DataFrame(json['result']['rows'])
+#dataset_category_mapping = pd.read_csv("dataset_category_mapping.csv",encoding = "latin")
+#latest_data_with_categories = pd.merge(latest_data,dataset_category_mapping,how = "left",on = 'title')
 
-#latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv")
+latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv",encoding = "latin")
 
 repository_list = latest_data_with_categories['repo_title'].unique().tolist()
 category_list = latest_data_with_categories['Category'].unique().tolist()
@@ -75,6 +75,31 @@ display(repo_dropdown)
 display(country_dropdown)
 display(category_dropdown)
 display(year_dropdown)
+```
+
+Next, select a specific dataset from the dropdown menu below. If desired, you may also modify the query type.
+
+```{code-cell} ipython3
+:tags: ["hide-input"]
+import pandas as pd
+latest_data_with_categories = pd.read_csv("data/latest_data_with_categories.csv",encoding = "latin")
+title_list = latest_data_with_categories[latest_data_with_categories['repo_title'] == repo_dropdown.value]['title'].unique().tolist()
+
+filtered_survey_dropdown = widgets.Dropdown(
+    options=title_list,
+    description='Select dataset:',
+    disabled=False,
+)
+
+query_dropdown = widgets.Dropdown(
+    options=query_type,
+    value='1',
+    description='Select query type:',
+    disabled=False,
+)
+
+display(filtered_survey_dropdown)
+display(query_dropdown)
 ```
 
 # Model output
