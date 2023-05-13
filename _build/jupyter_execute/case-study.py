@@ -34,7 +34,7 @@ print(df[df["id"] == 189])
 
 #from glueviz import glue
 from myst_nb import glue
-df  = pd.read_csv("data/dataset189_query1.csv")
+df  = pd.read_csv("data/dataset189_query1.csv",encoding = "latin")
 glue("df_tbl", df)
 
 
@@ -65,7 +65,7 @@ w
 
 #from glueviz import glue
 from myst_nb import glue
-df  = pd.read_csv("data/sample_results.csv")
+df  = pd.read_csv("data/sample_results.csv",encoding = "latin")
 glue("df_tbl", df)
 
 
